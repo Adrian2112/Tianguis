@@ -2,13 +2,13 @@ ActionController::Routing::Routes.draw do |map|
   
   map.signup '/signup', :controller => "usuarios", :action => "new"
   map.login '/login', :controller => "acceso", :action => "login"
-  map.perfil '/perfil', :controller => "usuarios", :action => "perfil", :id => 1
+  map.perfil '/perfil', :controller => "usuarios", :action => "perfil"
   
   map.resources :amigos
 
   map.resources :categorias
 
-  map.resources :articulos
+  map.resources :articulos, :collection => { :busqueda => :get }
 
   map.resources :usuarios
 

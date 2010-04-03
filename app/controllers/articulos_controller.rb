@@ -43,4 +43,8 @@ class ArticulosController < ApplicationController
       format.html { redirect_to(articulos_url) }
     end
   end
+  
+  def busqueda
+    @articulos = Articulo.all
+  end
 end

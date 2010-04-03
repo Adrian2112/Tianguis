@@ -14,9 +14,9 @@
 			<%= image_tag ("polloNaranja.png"), :style => "position:relative;left:30%"%>
 		</div>
 		<div class="contenido">
-			<% form_tag('', :method => "get") do%>
+			<% form_tag({:controller => "articulos", :action => "busqueda"}, :method => "get") do%>
 				<%= text_field_tag "busca" %>
-				<%= submit_tag "" %>
+				<%= submit_tag "", :name => "" %>
 			<% end %>
 			<div>
 				<%= link_to "Inicia Secci&oacute;n", login_path %><br />
