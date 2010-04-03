@@ -27,7 +27,7 @@ input[type=text] {
 	font-size:35px;
 	margin: 0;
 	border: none;
-	background: url(../Imagenes/barraBusqueda.png) no-repeat top left;
+	background: url(../images/barraBusqueda.png) no-repeat top left;
 }
 input[type=submit] {
 	height: 82px;
@@ -35,7 +35,7 @@ input[type=submit] {
 	float: left;
 	margin: 0;
 	border: none;
-	background: url(../Imagenes/guadalupa.png) no-repeat top left;
+	background: url(../images/guadalupa.png) no-repeat top left;
 }
 
 .pollitos{
@@ -44,5 +44,5 @@ input[type=submit] {
 .letrero{
 	width:286px;
 	height:151px;
-	background: url(../Imagenes/logo.png) no-repeat top left;
+	background: url(../images/logo.png) no-repeat top left;
 }
