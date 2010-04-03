@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<%= stylesheet_link_tag "template"%>
-<%= javascript_include_tag 'prototype'  %>
+	<%= javascript_include_tag 'prototype'  %>
 	<title>El tianguis</title>
 </head>
 
@@ -18,7 +18,7 @@
 			<% end %>
 		</div>
 		<div class="menu">
-			Perfil | Comprar | Vender | Mi canasta
+			<%= link_to "Perfil", perfil_path %> | Comprar | Vender | Mi canasta
 		</div>
 		<div class="pagina">
 			<div class="banderas"></div>

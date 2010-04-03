@@ -1,11 +1,16 @@
 class UsuariosController < ApplicationController
-  
+
+  before_filter :autorizar, :only => "perfil"
+
   def new
     @usuario = Usuario.new    
   end
 
   def edit
     @usuario = Usuario.find(params[:id])
+    unless @usuario.id == session[:user_id]
+      redirect_to perfil_path
+    end
   end
 
   def create
@@ -20,6 +25,11 @@ class UsuariosController < ApplicationController
         format.html { render :action => "new" }
       end
     end
+  end
+  
+  def show
+    @usuario = Usuario.find(params[:id])
+    @articulos = Articulo.find_all_by_vendedor_id(params[:id])
   end
 
   def update
@@ -43,13 +53,13 @@ class UsuariosController < ApplicationController
       format.html { redirect_to(usuarios_url) }
     end
   end
-  
+
   def perfil
     @usuario = Usuario.find(session[:user_id])
     @articulos = Articulo.find_all_by_vendedor_id(session[:user_id])
   end
 
- def validateNickname
+  def validateNickname
     color = 'red'
     username = params[:nickname]
     if username.length < 5
@@ -68,24 +78,20 @@ class UsuariosController < ApplicationController
     @message = "<span style='color:#{color}; font-size:15px'>#{message}</span>"
     render :partial=>'message'
   end
-  
- def validateEmail
+
+  def validateEmail
     color = 'red'
     username = params[:email]
-      user = Usuario.find_all_by_email(username)      
-			coincidencia = username.match(/([a-z0-9_.-]+)@([a-z0-9-]+)\.([a-z.]+)/i)
-			if coincidencia.nil?
-			message = 'Mail incorrecto'
-			elsif !coincidencia.nil?
-			message = 'Mail Correcto'
-			color = 'green'
-end
+    user = Usuario.find_all_by_email(username)      
+    coincidencia = username.match(/([a-z0-9_.-]+)@([a-z0-9-]+)\.([a-z.]+)/i)
+    if coincidencia.nil?
+      message = 'Mail incorrecto'
+    elsif !coincidencia.nil?
+      message = 'Mail Correcto'
+      color = 'green'
+    end
     @messageEmail = "<span style='color:#{color}; font-size:15px'>#{message}</span>"
     render :partial=>'messageEmail'
   end
 
-  protected  
-  def autorizar    
-  end
-  
 end
