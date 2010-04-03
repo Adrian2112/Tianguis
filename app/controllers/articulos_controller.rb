@@ -8,6 +8,10 @@ class ArticulosController < ApplicationController
   def edit
     @articulo = Articulo.find(params[:id])
   end
+  
+  def show
+    @articulo = Articulo.find(params[:id])
+  end
 
   def create
     @articulo = Articulo.new(params[:articulo])

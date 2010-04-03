@@ -1,0 +1,20 @@
+<h2><%= @articulo.nombre %></h2>
+<div class="vendedor">
+	<div class="fotoArticulo">
+		Imagen :)
+	</div>
+	<div class="reputacion">
+		<div style="border:black solid 1px; height:133px;">
+			<%= @articulo.vendedor.nombre %><br/>
+			<%= @articulo.vendedor.nombre %><br/>
+		</div>
+	</div>
+</div>
+
+<div class="descripcionArticulo">
+	<div class="descripcionArriba"></div>
+	<div class="descripcionCuerpo">
+		<%= @articulo.descripcion %>
+	</div>
+	<div class="descripcionAbajo"></div>
+</div>

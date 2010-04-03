@@ -1,6 +1,6 @@
 class Articulo < ActiveRecord::Base
-  belongs_to :usuario, :foreign_key => "vendedor_id"
-  belongs_to :usuario, :foreign_key => "comprador_id"
+  belongs_to :vendedor, :class_name => "Usuario", :foreign_key => "vendedor_id"
+  belongs_to :comprador, :class_name => "Usuario", :foreign_key => "comprador_id"
   belongs_to :categoria
   
   validates_presence_of :nombre, :precio, :cantidad, :descripcion

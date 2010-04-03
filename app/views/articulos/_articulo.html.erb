@@ -1,6 +1,6 @@
 <div class="Articulos">
 	<div class = "contenido">
-		<%= articulo.nombre %><br/>
+		<%= link_to articulo.nombre, articulo_path(articulo.id)  %><br/>
 		<%= articulo.descripcion %><br/>
 		<%= number_to_currency(articulo.precio) %><br/>
 	</div>
