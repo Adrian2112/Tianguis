@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   def autorizar
     unless Usuario.find_by_id(session[:user_id])
       session[:original_uri] = request.request_uri
-      flash[:notice] = "Please log in"
+      flash[:notice] = "Porfavor inicia sesión"
       redirect_to :controller => 'acceso', :action => 'login'
     end
   end
