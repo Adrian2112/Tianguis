@@ -13,7 +13,7 @@
 			<% if session[:user_id] == nil %>
 					<%= link_to "Iniciar sesión", login_path %>			
 			<% else %>
-				<%= link_to "Terminar sesión", :controller => "acceso", :action => "logout" %>
+				<%= link_to "Cerrar sesión", :controller => "acceso", :action => "logout" %>
 			<% end %>
 		</div>
 		<div class="menu">
