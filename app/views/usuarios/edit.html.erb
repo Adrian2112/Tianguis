@@ -1,8 +1,12 @@
-<h1>Editing usuario</h1>
+<h1>Modifica tu información</h1>
 
 <% form_for(@usuario) do |f| %>
   <%= f.error_messages %>
 
+	<p>
+    <%= f.label :nickname, "Nickname" %><br />
+    <%= f.text_field :nickname %>
+  </p>
   <p>
     <%= f.label :nombre, "Nombre" %><br />
     <%= f.text_field :nombre %>
@@ -16,12 +20,9 @@
     <%= f.text_field :apellido_materno %>
   </p>
   <p>
-    <%= f.label :sexo, "Sexo" %><br />
-    <%= f.text_field :sexo %>
-  </p>
-  <p>
-    <%= f.label :nickname, "Nickname" %><br />
-    <%= f.text_field :nickname %>
+    <%= f.label "Sexo" %><br />
+    <%= f.label :sexo_masculino, "Masculino" %><%= f.radio_button("sexo", "Masculino") %><br />
+		<%= f.label :sexo_femenino, "Femenino" %><%= f.radio_button("sexo", "Femenino") %>
   </p>
   <p>
     <%= f.label :telefono, "Telefono" %><br />
