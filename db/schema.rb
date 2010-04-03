@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(:version => 20100402184415) do
     t.string   "imagen_cuatro"
     t.integer  "cantidad"
     t.string   "descripcion"
-    t.integer  "status"
+    t.integer  "status",                                                     :default => 0
     t.integer  "categoria_id"
     t.integer  "vendedor_id"
     t.integer  "comprador_id"
