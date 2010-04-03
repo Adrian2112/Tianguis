@@ -2,15 +2,15 @@ ActionController::Routing::Routes.draw do |map|
   
   map.signup '/signup', :controller => "usuarios", :action => "new"
   map.login '/login', :controller => "acceso", :action => "login"
-  map.perfil '/perfil', :controller => "usuarios", :action => "perfil"
+  map.perfil '/perfil', :controller => "usuarios", :action => "perfil", :id => 1 #esta mal esto
   
   map.resources :amigos
 
   map.resources :categorias
 
-  map.resources :articulos, :collection => { :busqueda => :get }
+  map.resources :articulos, :path_names => { :new => "nuevo", :edit => 'editar'}, :collection => { :busqueda => :get }
 
-  map.resources :usuarios
+  map.resources :usuarios, :member => { :edit => :get}
 
   # The priority is based upon order of creation: first created -> highest priority.
 
