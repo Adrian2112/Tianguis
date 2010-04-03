@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  AmigoUno_id: 1
+  AmigoDos_id: 1
+
+two:
+  AmigoUno_id: 1
+  AmigoDos_id: 1

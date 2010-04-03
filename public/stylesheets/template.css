@@ -1,0 +1,148 @@
+body{
+	background-color:#89d2de;
+	font-family: "Century Gothic";
+	font-size: 16px;
+}
+
+.menu{
+	width: 707px;
+	margin: 0 auto 30px;
+	height: 34px;
+	background: url(../images/menu.png);
+	text-align: right;
+	padding: 15px 20px 20px;
+}
+
+.logo {	
+	height: 102px;
+	width: 191px;	
+}
+
+.menu input {
+	float: left;
+}
+
+.pagina .banderas {
+	width: 100%;
+	background: url(../images/adorno.png);
+	height: 68px;
+}
+
+.pagina {
+	margin: auto;
+	width: 745px;
+	background: white;
+}
+
+.pagina .abajo {
+	background: url(../images/cuerpoAbajo.png);
+	height: 45px;
+}
+
+.content{
+	background: url(../images/cuerpo.png);
+	padding: 10px 50px 0;
+	text-overflow:ellipsis;
+}
+
+.content .descripcionArriba {
+	height:59px;
+	background: url(../images/descripcionAticulo.png) no-repeat right;
+}
+
+.content .descripcionAbajo {
+	height:20px;
+	background: url(../images/descripcionArticuloAbajo.png);	
+}
+
+.todo{
+	margin:auto;
+	width:902px;
+}
+
+.forma input[type=text], .forma input[type=password]{
+	background:url(../images/campo.png) no-repeat top;
+	height:25px;
+	width:237px;
+	border:none;
+	padding: 0 5px 20px 5px;
+	font-size:18px;
+}
+
+.forma table, th, td{
+	border:9px;
+}
+
+.forma input[type=submit]{
+	background:url(../images/crearCuenta.png);
+	height: 47px;
+	width: 137px;
+	font-size:18px;
+	color:white;
+}
+
+.fotoArticulo {
+	height:160px;
+	width:160px;
+	display: inline;
+	float: left;
+	border: solid black 1px;
+}
+
+.reputacion {
+	width:310px;
+	float: right;
+	height: 160px;
+}
+
+.descripcionCuerpo{
+	padding:0 30px 0;
+}
+
+.descripcionArticulo {
+	margin: auto;
+	background:url(../images/descripcionArticuloCuerpo.png);
+	width:552px;
+}
+
+.Articulos{
+	background:url(../images/marcoProducto.png);
+	width:683px;
+	height:104px;
+	margin:10px -16px 0;
+}
+
+.Articulos .contenido{
+	height:50px;
+	padding: 20px 25px 0;
+}
+
+.btnComprar{
+	background:url(../images/botonComprar.png);
+	width:79px;
+	height:27px;
+	position: relative;
+	left: 580px;
+}
+
+.comprar{
+	float:right;
+	background:url(../images/botonComprar.png);
+	height:27px;
+	width:79px;
+}
+
+.vendedor{
+	height: 165px;
+	margin: 0 auto 30px;
+	width: 552px;
+}
+
+input[type=text], input[type=password]{
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+}
+
+img{
+	border:0px;
+}

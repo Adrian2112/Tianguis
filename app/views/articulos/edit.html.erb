@@ -1,0 +1,56 @@
+<h1>Editing articulo</h1>
+
+<% form_for(@articulo) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :Nombre %><br />
+    <%= f.text_field :Nombre %>
+  </p>
+  <p>
+    <%= f.label :Precio %><br />
+    <%= f.text_field :Precio %>
+  </p>
+  <p>
+    <%= f.label :ImagenUno %><br />
+    <%= f.text_field :ImagenUno %>
+  </p>
+  <p>
+    <%= f.label :ImagenDos %><br />
+    <%= f.text_field :ImagenDos %>
+  </p>
+  <p>
+    <%= f.label :ImagenTres %><br />
+    <%= f.text_field :ImagenTres %>
+  </p>
+  <p>
+    <%= f.label :ImagenCuatro %><br />
+    <%= f.text_field :ImagenCuatro %>
+  </p>
+  <p>
+    <%= f.label :Cantidad %><br />
+    <%= f.text_field :Cantidad %>
+  </p>
+  <p>
+    <%= f.label :Descripcion %><br />
+    <%= f.text_field :Descripcion %>
+  </p>
+  <p>
+    <%= f.label :Status %><br />
+    <%= f.text_field :Status %>
+  </p>
+  <p>
+    <%= f.label :Categoria_id %><br />
+    <%= f.text_field :Categoria_id %>
+  </p>
+  <p>
+    <%= f.label :Usuario_id %><br />
+    <%= f.text_field :Usuario_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @articulo %> |
+<%= link_to 'Back', articulos_path %>

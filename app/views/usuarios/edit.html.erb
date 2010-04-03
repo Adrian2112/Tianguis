@@ -1,0 +1,47 @@
+<h1>Editing usuario</h1>
+
+<% form_for(@usuario) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :nombre, "Nombre" %><br />
+    <%= f.text_field :nombre %>
+  </p>
+  <p>
+    <%= f.label :apellido_paterno, "Apellido Paterno" %><br />
+    <%= f.text_field :apellido_paterno %>
+  </p>
+  <p>
+    <%= f.label :apellido_materno, "Apellido Materno"%><br />
+    <%= f.text_field :apellido_materno %>
+  </p>
+  <p>
+    <%= f.label :sexo, "Sexo" %><br />
+    <%= f.text_field :sexo %>
+  </p>
+  <p>
+    <%= f.label :nickname, "Nickname" %><br />
+    <%= f.text_field :nickname %>
+  </p>
+  <p>
+    <%= f.label :telefono, "Telefono" %><br />
+    <%= f.text_field :telefono %>
+  </p>
+  <p>
+    <%= f.label :fecha_nacimiento, "Fecha de nacimiento" %><br />
+    <%= f.date_select :fecha_nacimiento %>
+  </p>
+  <p>
+    <%= f.label :email, "Correo Electronico" %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :carrera, "Carrera" %><br />
+    <%= f.text_field :carrera %>
+  </p>
+  <p>
+    <%= f.submit 'Actualizar' %>
+  </p>
+<% end %>
+
+<%= link_to 'Regresar', :action => "perfil" %>

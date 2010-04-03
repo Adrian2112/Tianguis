@@ -1,0 +1,19 @@
+<h1>New amigo</h1>
+
+<% form_for(@amigo) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :amigo_uno_id %><br />
+    <%= f.text_field :amigo_uno_id %>
+  </p>
+  <p>
+    <%= f.label :amigo_dos_id %><br />
+    <%= f.text_field :amigo_dos_id %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', amigos_path %>

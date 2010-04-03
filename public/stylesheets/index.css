@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	margin:0px;
+	padding:0px;
+	background-color:#89D2DE;
+}
+
+.todo{
+	width: 860px;
+	margin: auto;
+	padding: 150px 0 0;
+}
+.contenido{
+	margin:0;
+	width:600px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+input[type=text] {
+	height: 72px;
+	width: 472px;
+	padding: 10px 10px 0 20px;
+	float: left;
+	font-size:35px;
+	margin: 0;
+	border: none;
+	background: url(../Imagenes/barraBusqueda.png) no-repeat top left;
+}
+input[type=submit] {
+	height: 82px;
+	width: 89px;
+	float: left;
+	margin: 0;
+	border: none;
+	background: url(../Imagenes/guadalupa.png) no-repeat top left;
+}
+
+.pollitos{
+}
+
+.letrero{
+	width:286px;
+	height:151px;
+	background: url(../Imagenes/logo.png) no-repeat top left;
+}

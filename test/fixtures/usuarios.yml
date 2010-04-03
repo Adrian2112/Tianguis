@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  Nombre: MyString
+  ApellidoPaterno: MyString
+  ApellidoMaterno: MyString
+  Edad: 1
+  Sexo: MyString
+  Nickname: MyString
+  Hashed_Password: MyString
+  Salt: MyString
+  Telefono: MyString
+  FechaNacimiento: 2010-04-02
+  Email: MyString
+  Carrera: MyString
+  Reputacion: 9.99
+
+two:
+  Nombre: MyString
+  ApellidoPaterno: MyString
+  ApellidoMaterno: MyString
+  Edad: 1
+  Sexo: MyString
+  Nickname: MyString
+  Hashed_Password: MyString
+  Salt: MyString
+  Telefono: MyString
+  FechaNacimiento: 2010-04-02
+  Email: MyString
+  Carrera: MyString
+  Reputacion: 9.99

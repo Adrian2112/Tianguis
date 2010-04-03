@@ -1,0 +1,58 @@
+<p>
+  <b>Nombre:</b>
+  <%=h @articulo.Nombre %>
+</p>
+
+<p>
+  <b>Precio:</b>
+  <%=h @articulo.Precio %>
+</p>
+
+<p>
+  <b>Imagenuno:</b>
+  <%=h @articulo.ImagenUno %>
+</p>
+
+<p>
+  <b>Imagendos:</b>
+  <%=h @articulo.ImagenDos %>
+</p>
+
+<p>
+  <b>Imagentres:</b>
+  <%=h @articulo.ImagenTres %>
+</p>
+
+<p>
+  <b>Imagencuatro:</b>
+  <%=h @articulo.ImagenCuatro %>
+</p>
+
+<p>
+  <b>Cantidad:</b>
+  <%=h @articulo.Cantidad %>
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%=h @articulo.Descripcion %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @articulo.Status %>
+</p>
+
+<p>
+  <b>Categoria:</b>
+  <%=h @articulo.Categoria_id %>
+</p>
+
+<p>
+  <b>Usuario:</b>
+  <%=h @articulo.Usuario_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_articulo_path(@articulo) %> |
+<%= link_to 'Back', articulos_path %>
