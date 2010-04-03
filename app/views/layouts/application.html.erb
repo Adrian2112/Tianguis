@@ -9,7 +9,7 @@
 <body>
 	<div class="todo">
 		<div class = "logo">
-			<a href="template.html"><%= image_tag ("logoMenor.png")%></a>
+			<%= image_tag ("logoMenor.png")%>
 			
 			<% unless session[:user_id] == nil %>
 				<%= link_to "logout", :controller => "acceso", :action => "logout" %>
