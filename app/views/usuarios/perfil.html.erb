@@ -8,7 +8,7 @@
 	Carrera: <%= @usuario.carrera %><br/>
 	Reputacion: <%= @usuario.reputacion %><br/>
 </fieldset>
-<%= link_to "editar", edit_usuario_path %>
+<%= link_to "editar", edit_usuario_path(session[:user_id]) %>
 
 <fieldset>
 	<legend>Tus Artículos en Venta</legend>
