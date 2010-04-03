@@ -8,19 +8,20 @@
 
 <body>
 	<div class="todo">
-	  <div class="pollitos">
-      <img src="../images/logo.png" />
-      <img src="../images/polloMorado.png" />
-			<img src="../images/polloNaranja.png" style="position:relative;left:30%"></div>
-			<div class="contenido">
-				<form action="" method="get">
-					<input type="text" name="busca" />
-					<input type="submit" value="" />
-				</form>
-             <div>
-             <a href="">Registrate</a>
-             </div>
+		<div class="pollitos">
+			<%= image_tag ("logo.png") %>
+			<%= image_tag ("polloMorado.png") %>
+			<%= image_tag ("polloNaranja.png"), :style => "position:relative;left:30%"%>
+		</div>
+		<div class="contenido">
+			<% form_tag('', :method => "get") do%>
+				<%= text_field_tag "busca" %>
+				<%= submit_tag "" %>
+			<% end %>
+			<div>
+				<%= link_to "Registrate!", signup_path %>
 			</div>
 		</div>
-	</body>
-	</html>
+	</div>
+</body>
+</html>
