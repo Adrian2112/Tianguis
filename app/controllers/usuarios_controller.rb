@@ -17,7 +17,6 @@ class UsuariosController < ApplicationController
         session[:user_id] = @usuario.id
         format.html { redirect_to perfil_path}
       else
-        flash[:notice] = 'no'
         format.html { render :action => "new" }
       end
     end

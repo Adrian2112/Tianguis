@@ -83,11 +83,11 @@ es:
       second: 'Segundo'        
  
   activerecord:
-    errors:
+    errors: 
       template:
         header:
           one: "{{model}} no pudo guardarse debido a 1 error"
-          other: "{{model}} no pudo guardarse debido a {{count}} errores"
+          other: "El {{model}} no pudo guardarse debido a {{count}} errores"
         body: "Revise que los siguientes campos sean válidos:"
       messages:
         inclusion: "no está incluído en la lista"
