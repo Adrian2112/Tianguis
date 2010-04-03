@@ -7,10 +7,18 @@
     <%= f.label :nombre %><br />
     <%= f.text_field :nombre %>
   </p>
-  
+
     <%= f.label :nickname, "Nombre de usuario" %><br />
-    <%= f.text_field :nickname %>
+    <%= f.text_field :nickname, :placeholder => "nombre" %><span id="message"></span>
   </p>
+
+<%= observe_field   :usuario_nickname,                         # The field to observe 
+                        :with       => "nickname",              # The input to validate
+                        :frequency  => 0.25,                    # The frequency in seconds to watch for changes
+                        :url        => {:action => :validateNickname }, # The action to call when changes occur
+                        :update     => :message                 # The DOM ID to update
+                      %>
+
   <p>
     <%= f.label :usuario_password, 'Password' %><br />
     <%= f.password_field :password %>
@@ -21,14 +29,26 @@
   </p>
   <p>
     <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email %><span id="messageEmail"></span>
+  </p>
+
+<%= observe_field   :usuario_email,                         # The field to observe 
+                        :with       => "email",              # The input to validate
+                        :frequency  => 0.25,                    # The frequency in seconds to watch for changes
+                        :url        => {:action => :validateEmail }, # The action to call when changes occur
+                        :update     => :messageEmail                 # The DOM ID to update
+                      %>
+
+  <p>
+    <%= f.label :carrera, 'Carrera' %><br />
+    <%= f.select :carrera,
+             Usuario::CARRERA,
+            :prompt => "Selecciona una carrera "
+%>
+
   </p>
   <p>
-    <%= f.label :carrera %><br />
-    <%= f.text_field :carrera %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
+    <%= f.submit 'Registrar' %>
   </p><br />
 <% end %>
 

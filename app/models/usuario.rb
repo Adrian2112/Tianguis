@@ -2,6 +2,17 @@ class Usuario < ActiveRecord::Base
   has_many :articulos
   has_many :amigos
 
+CARRERA = [
+  # Displayed         stored in db
+  [ "IA - Ingeniero Agronomo" , "IA" ],
+  [ "IAB - Ingeniero en Agrobiotecnologia" , "IAB" ],
+  [ "IIA - Ingeniero en Industrias Alimentarias" , "IIA" ]
+]
+
+validates_inclusion_of :carrera, :in =>
+  CARRERA.map {|disp, value| value}
+
+
   EmailRegex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   validates_presence_of :nombre, :nickname, :email, :carrera
