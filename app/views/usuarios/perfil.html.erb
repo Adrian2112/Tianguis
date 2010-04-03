@@ -1,8 +1,12 @@
-<%= javascript_include_tag 'prototype'  %>
 <fieldset>
 	<legend>Tus datos</legend>
 	Nombre: <%= @usuario.nombre %> <%= @usuario.apellido_paterno %> <%= @usuario.apellido_materno %><br />
 	Nickname: <%= @usuario.nickname %> <br />
+	Fecha de nacimiento:
+		<% unless @usuario.fecha_nacimiento == nil %>
+			<%= @usuario.fecha_nacimiento.strftime("%e %B, %Y") %>
+		<% end %>
+			<br />
 	Sexo: <%= @usuario.sexo %> <br />
 	Telefono: <%= @usuario.telefono %><br/>
 	Email: <%= @usuario.email %><br/>
