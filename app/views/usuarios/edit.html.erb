@@ -5,7 +5,7 @@
 
 	<p>
     <%= f.label :nickname, "Nickname" %><br />
-    <%= f.text_field :nickname %>
+    <%= f.text_field :nickname, :disabled => "disabled" %>
   </p>
   <p>
     <%= f.label :nombre, "Nombre" %><br />
@@ -30,7 +30,8 @@
   </p>
   <p>
     <%= f.label :fecha_nacimiento, "Fecha de nacimiento" %><br />
-    <%= f.date_select :fecha_nacimiento %>
+    <%= f.date_select :fecha_nacimiento, :start_year => Time.now.year-60, :end_year => Time.now.year-18,
+						:prompt => { :day => "Día" , :month => 'Mes', :year => 'Año' } %>
   </p>
   <p>
     <%= f.label :email, "Correo Electronico" %><br />
