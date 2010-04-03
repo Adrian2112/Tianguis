@@ -1,7 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   
   map.signup '/signup', :controller => "usuarios", :action => "new"
-  map.login '/login', :controller => "acceso", :action => "login"
   map.perfil '/perfil', :controller => "usuarios", :action => "perfil", :id => 1
   
   map.resources :amigos
