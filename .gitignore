@@ -8,3 +8,4 @@ db/*.sqlite3
 *~
 .DS_Store
 *.tmproj
+config/database.yml
