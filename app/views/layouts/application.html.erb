@@ -11,9 +11,10 @@
 	<div class="todo">
 		<div class = "logo">
 			<%= image_tag ("logoMenor.png")%>
-			
-			<% unless session[:user_id] == nil %>
-				<%= link_to "logout", :controller => "acceso", :action => "logout" %>
+			<% if session[:user_id] == nil %>
+					<%= link_to "Iniciar sesión", login_path %>			
+			<% else %>
+				<%= link_to "Cerrar sesión", :controller => "acceso", :action => "logout" %>
 			<% end %>
 		</div>
 		<div class="menu">
