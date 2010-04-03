@@ -13,8 +13,8 @@ class Usuario < ActiveRecord::Base
 
   validate :password_non_blank
 
-  def self.authenticate(nombre, password)
-    usuario = self.find_by_nombre(nombre)
+  def self.authenticate(nickname, password)
+    usuario = self.find_by_nickname(nickname)
     if usuario
       expected_password = encrypted_password(password, usuario.salt)
       if usuario.hashed_password != expected_password

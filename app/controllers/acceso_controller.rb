@@ -2,7 +2,7 @@ class AccesoController < ApplicationController
   def login
     session[:usuario_id] = nil
     if request.post?
-      user = Usuario.authenticate(params[:nombre], params[:password])
+      user = Usuario.authenticate(params[:nickname], params[:password])
       if user
         session[:user_id] = user.id
         uri = session[:original_uri]
