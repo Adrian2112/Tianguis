@@ -1,57 +1,53 @@
 <h1>Vendiendo</h1>
 
-<% end %>
-<% form_for([@articulo,:asset, :url => assets_path, :html => { :multipart => true }] ) do |f| %>
+<% form_for(@articulo) do |f| %>
   <%= f.error_messages %>
-	<%= error_messages_for :asset %>
-	<%= params[:id] %>
-  <p>
-    <%= f.label :nombre %><br />
+  <div>
     <%= f.text_field :nombre, :placeholder => "Nombre del articulo" %>
-  </p>
-  <p>
-    <%= f.label :precio %><br />
+  </div>
+	<br/>
+  <div>
     <%= f.text_field :precio, :placeholder => "Precio" %>
-  </p>
-
-<%= render(:partial => '/assets/form', :object => form)%>
-  <p>
+  </div>
+	<br/>
+  <div>
     <%= f.label :imagen_uno %><br />
     <%= f.text_field :imagen_uno %>
-  </p>
-  <p>
+  </div>
+	<br/>
+  <div>
     <%= f.label :imagen_dos %><br />
     <%= f.text_field :imagen_dos %>
-  </p>
-  <p>
+  </div>
+	<br/>
+  <div>
     <%= f.label :imagen_tres %><br />
     <%= f.text_field :imagen_tres %>
-  </p>
-  <p>
+  </div>
+	<br/>
+  <div>
     <%= f.label :imagen_cuatro %><br />
     <%= f.text_field :imagen_cuatro %>
-  </p>
-  <p>
-    <%= f.label :cantidad %><br />
+  </div>
+	<br/>
+  <div>
     <%= f.text_field :cantidad, :placeholder => "Cuantos tienes?" %>
-  </p>
-  <p>
+  </div>
+	<br/>
+  <div>
     <%= f.label :descripcion %><br />
-    <%= f.text_area :descripcion, :cols => 60, :rows => 10,  :placeholder => "Breve descripcion" %>
-  </p>
+    <%= f.text_area :descripcion, :cols => 60, :rows => 10 %>
+  </div>
     <%= f.hidden_field :vendedor_id %>
-  <p>
+	<br/>
+  <div>
     <%= f.label :categoria_id %><br />
     <%= f.text_field :categoria_id %>
-  </p>
-  <p>
+  </div>
+	<br/>
+  <div>
     <%= f.submit 'Create' %>
-  </p>
-<% end %>
-
-<%= error_messages_for :asset %>
-<% form_for(:asset, :url => assets_path, :html => { :multipart => true }) do |form| %>
-<%= render(:partial => '/assets/form', :object => form)%>
+  </div>
 <% end %>
 
 <%= link_to 'Back', articulos_path %>
