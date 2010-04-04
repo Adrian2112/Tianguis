@@ -4,5 +4,5 @@
 		<%= articulo.descripcion %><br/>
 		<%= number_to_currency(articulo.precio) %><br/>
 	</div>
-	<input type="button" class="btnComprar" value="" />
+	<%= button_to '', {:controller => "usuarios", :action => "comprar", :id => articulo.id}, :class => "btnComprar" %>
 </div>

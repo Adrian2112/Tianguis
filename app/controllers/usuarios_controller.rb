@@ -56,7 +56,9 @@ class UsuariosController < ApplicationController
 
   def perfil
     @usuario = Usuario.find(session[:user_id])
-    @articulos = Articulo.find_all_by_vendedor_id(session[:user_id])
+    @enVenta = Articulo.find_all_by_vendedor_id(session[:user_id])
+    @comprados = Articulo.find_all_by_comprador_id(session[:user_id])
+    @enProceso = Articulo.find_all_by_vendedor_id_and_status(session[:user_id], 1)    
   end
 
   def validateNickname
@@ -92,6 +94,14 @@ class UsuariosController < ApplicationController
     end
     @messageEmail = "<span style='color:#{color}; font-size:15px'>#{message}</span>"
     render :partial=>'messageEmail'
+  end
+  
+  def comprar
+    @articulo = Articulo.find(params[:id])
+    @articulo.status = 1
+    @articulo.comprador_id = session[:user_id]
+    @articulo.save
+    redirect_to perfil_path
   end
 
 end
