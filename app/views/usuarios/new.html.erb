@@ -5,11 +5,11 @@
 
   <p>
     <%= f.label :nombre %><br />
-    <%= f.text_field :nombre %>
+    <%= f.text_field :nombre, :placeholder => "Nombre" %>
   </p>
 
     <%= f.label :nickname, "Nombre de usuario" %><br />
-    <%= f.text_field :nickname, :placeholder => "nombre" %><span id="message"></span>
+    <%= f.text_field :nickname, :placeholder => "Nombre de usuario" %><span id="message"></span>
   </p>
 
 <%= observe_field   :usuario_nickname,                         # The field to observe 
@@ -21,15 +21,15 @@
 
   <p>
     <%= f.label :usuario_password, 'Password' %><br />
-    <%= f.password_field :password %>
+    <%= f.password_field :password, :placeholder => "Password" %>
   </p>
   <p>
     <%= f.label :usuario_password_confirmation, "Confirmacion" %><br />
-    <%= f.password_field :password_confirmation %>
+    <%= f.password_field :password_confirmation, :placeholder => "Password de nuevo" %>
   </p>
   <p>
     <%= f.label :email %><br />
-    <%= f.text_field :email %><span id="messageEmail"></span>
+    <%= f.text_field :email, :placeholder => "Correo electronico" %><span id="messageEmail"></span>
   </p>
 
 <%= observe_field   :usuario_email,                         # The field to observe 

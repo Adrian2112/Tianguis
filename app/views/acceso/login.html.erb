@@ -2,11 +2,11 @@
 <fieldset>
 	<div>
 		<label for="name">Nombre de usuario:</label>
-		<%= text_field_tag :nickname, params[:nickname] %>
+		<%= text_field_tag :nickname, params[:nickname], :placeholder => "Nombre de usuario" %>
 	</div>
 	<div>
 		<label for="password">Password:</label>
-		<%= password_field_tag :password, params[:password] %>
+		<%= password_field_tag :password, params[:password], :placeholder => "Password" %>
 	</div>
 	<div>
 		<%= submit_tag "Login" %>

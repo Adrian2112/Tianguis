@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100402184415) do
+ActiveRecord::Schema.define(:version => 20100403213328) do
 
   create_table "amigos", :force => true do |t|
     t.integer  "amigo_uno_id", :null => false
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(:version => 20100402184415) do
     t.string   "imagen_cuatro"
     t.integer  "cantidad"
     t.string   "descripcion"
-    t.integer  "status",                                                     :default => 0
+    t.integer  "status"
     t.integer  "categoria_id"
     t.integer  "vendedor_id"
     t.integer  "comprador_id"
@@ -35,8 +35,33 @@ ActiveRecord::Schema.define(:version => 20100402184415) do
     t.datetime "updated_at"
   end
 
+  create_table "assets", :force => true do |t|
+    t.string   "filename"
+    t.string   "content_type"
+    t.integer  "size"
+    t.integer  "width"
+    t.integer  "height"
+    t.integer  "parent_id"
+    t.string   "thumbnail"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "categorias", :force => true do |t|
     t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "imagenes", :force => true do |t|
+    t.integer  "articulo_id"
+    t.integer  "parent_id"
+    t.integer  "tamano"
+    t.integer  "width"
+    t.integer  "height"
+    t.string   "contenido"
+    t.string   "nombreImagen"
+    t.string   "thumbail"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
