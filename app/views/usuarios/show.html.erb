@@ -1,0 +1,17 @@
+<fieldset>
+	<legend>Datos de usuario</legend>
+	Nombre: <%= @usuario.nombre %> <%= @usuario.apellido_paterno %> <%= @usuario.apellido_materno %><br />
+	Nickname: <%= @usuario.nickname %> <br />
+	Sexo: <%= @usuario.sexo %> <br />
+	Telefono: <%= @usuario.telefono %><br/>
+	Email: <%= @usuario.email %><br/>
+	Carrera: <%= @usuario.carrera %><br/>
+	Reputacion: <%= @usuario.reputacion %><br/>
+</fieldset>
+
+<fieldset>
+	<legend>Articulos en venta de este usuario</legend>
+	<% @articulos.each do |a| %>
+		<%=link_to a.nombre, articulo_path(a.id) %> <%= number_to_currency(a.precio) %><br/>
+	<% end %>
+</fieldset>

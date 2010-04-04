@@ -38,8 +38,10 @@
     <%= f.text_field :email %>
   </p>
   <p>
-    <%= f.label :carrera, "Carrera" %><br />
-    <%= f.text_field :carrera %>
+    <%= f.label :carrera, 'Carrera' %><br />
+    <%= f.select :carrera,
+             Usuario::CARRERA,
+            :prompt => "Selecciona una carrera "%>
   </p>
   <p>
     <%= f.submit 'Actualizar' %>

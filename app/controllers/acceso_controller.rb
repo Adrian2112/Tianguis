@@ -16,6 +16,6 @@ class AccesoController < ApplicationController
   
   def logout
     session[:user_id] = nil
-    redirect_to :action => "login"
+    redirect_to busqueda_articulos_path
   end
 end

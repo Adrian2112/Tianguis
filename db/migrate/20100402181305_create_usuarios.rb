@@ -12,7 +12,8 @@ class CreateUsuarios < ActiveRecord::Migration
       t.date :fecha_nacimiento
       t.string :email
       t.string :carrera
-      t.decimal :reputacion
+      t.decimal :reputacion, :default => 0
+      t.integer :votos, :default => 0
 
       t.timestamps
     end
