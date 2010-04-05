@@ -1,54 +1,46 @@
 <h1>Registrate</h1>
 
 <% form_for(@usuario) do |f| %>
-  <%= f.error_messages %>
 
-  <p>
-    <%= f.label :nombre %><br />
-    <%= f.text_field :nombre, :placeholder => "Nombre" %>
-  </p>
-
-    <%= f.label :nickname, "Nombre de usuario" %><br />
-    <%= f.text_field :nickname, :placeholder => "Nombre de usuario" %><span id="message"></span>
-  </p>
-
-<%= observe_field   :usuario_nickname,                         # The field to observe 
-                        :with       => "nickname",              # The input to validate
-                        :frequency  => 0.25,                    # The frequency in seconds to watch for changes
-                        :url        => {:action => :validateNickname }, # The action to call when changes occur
-                        :update     => :message                 # The DOM ID to update
-                      %>
-
-  <p>
-    <%= f.label :usuario_password, 'Password' %><br />
-    <%= f.password_field :password, :placeholder => "Password" %>
-  </p>
-  <p>
-    <%= f.label :usuario_password_confirmation, "Confirmacion" %><br />
-    <%= f.password_field :password_confirmation, :placeholder => "Password de nuevo" %>
-  </p>
-  <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email, :placeholder => "Correo electronico" %><span id="messageEmail"></span>
-  </p>
-
-<%= observe_field   :usuario_email,                         # The field to observe 
-                        :with       => "email",              # The input to validate
-                        :frequency  => 0.25,                    # The frequency in seconds to watch for changes
-                        :url        => {:action => :validateEmail }, # The action to call when changes occur
-                        :update     => :messageEmail                 # The DOM ID to update
-                      %>
-
-  <p>
-    <%= f.label :carrera, 'Carrera' %><br />
+  <div>
+	  <%= f.label :nombre, "Nombre" %><br />
+    <%= f.text_field :nombre %>
+		<%= error(@usuario, "nombre") %>
+  </div>
+	<br />
+	<div>
+	  <%= f.label :nickname, "Nombre de usuario" %><br />
+    <%= f.text_field :nickname %>
+		<%= error(@usuario, "nickname") %>
+  </div>
+	<br />
+  <div>
+		<%= f.label :password, "Password" %><br />
+    <%= f.password_field :password %>
+		<%= error(@usuario, "password") %>
+  </div>
+	<br />
+  <div>
+		<%= f.label :password_confirmation, "Confirmacion" %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+	<br />
+  <div>
+		<%= f.label :email, "Correo Electronico" %><br />
+    <%= f.text_field :email %>
+		<%= error(@usuario, "email") %>
+  </div>
+	<br />
+  <div>
     <%= f.select :carrera,
              Usuario::CARRERA,
-            :prompt => "Selecciona una carrera "
-%>
-
-  </p>
-  <p>
+            :prompt => "Selecciona una carrera"%>
+		<%= error(@usuario, "carrera") %>
+  </div>
+	<br />
+  <div>
     <%= f.submit 'Registrar' %>
-  </p><br />
+  </div>
+	<br />
 <% end %>
 

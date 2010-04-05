@@ -9,15 +9,12 @@ CARRERA = [
   [ "IIA - Ingeniero en Industrias Alimentarias" , "IIA" ]
 ]
 
-validates_inclusion_of :carrera, :in =>
-  CARRERA.map {|disp, value| value}
-
-
   EmailRegex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   validates_presence_of :nombre, :nickname, :email, :carrera
   validates_format_of   :email, :with => EmailRegex
   validates_uniqueness_of :email, :nickname
+  validates_inclusion_of :carrera, :in => CARRERA.map {|disp, value| value}
 
   attr_accessor :password_confirmation
   validates_confirmation_of :password
@@ -49,7 +46,7 @@ validates_inclusion_of :carrera, :in =>
   
   private
    def password_non_blank
-     errors.add(:password, "Falta el password" ) if hashed_password.blank?
+     errors.add(:password, "No puede estar en blanco" ) if hashed_password.blank?
    end
    
    def create_new_salt

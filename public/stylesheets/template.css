@@ -146,3 +146,7 @@ input[type=text], input[type=password]{
 img{
 	border:0px;
 }
+
+div.fieldWithErrors{
+	display:inline;
+}
