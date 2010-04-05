@@ -1,15 +1,17 @@
 <h1>Vendiendo</h1>
 
 <% form_for(@articulo) do |f| %>
-  <%= f.error_messages %>
+
   <div>
 		<%= f.label :nombre, "Nombre" %><br />
     <%= f.text_field :nombre, :placeholder => "Nombre del articulo" %>
+		<%= error(@articulo, "nombre") %>
   </div>
 	<br/>
   <div>
 		<%= f.label :precio, "Precio" %><br />
     <%= f.text_field :precio, :placeholder => "$$$" %>
+		<%= error(@articulo, "precio") %>
   </div>
 	<br/>
   <div>
@@ -35,17 +37,20 @@
   <div>
 		<%= f.label :cantidad, "Cantidad" %><br />
     <%= f.text_field :cantidad, :placeholder => "Cuantos tienes?" %>
+		<%= error(@articulo, "cantidad") %>
   </div>
 	<br/>
   <div>
     <%= f.label :descripcion %><br />
     <%= f.text_area :descripcion, :cols => 60, :rows => 10 %>
+		<%= error(@articulo, "descripcion") %>
   </div>
     <%= f.hidden_field :vendedor_id %>
 	<br/>
   <div>
     <%= f.label :categoria_id %><br />
     <%= f.text_field :categoria_id %>
+		<%= error(@articulo, "categoria") %>
   </div>
 	<br/>
   <div>
