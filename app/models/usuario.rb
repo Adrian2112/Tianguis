@@ -2,12 +2,14 @@ class Usuario < ActiveRecord::Base
   has_many :articulos
   has_many :amigos
 
-CARRERA = [
-  # Displayed         stored in db
-  [ "IA - Ingeniero Agronomo" , "IA" ],
-  [ "IAB - Ingeniero en Agrobiotecnologia" , "IAB" ],
-  [ "IIA - Ingeniero en Industrias Alimentarias" , "IIA" ]
-]
+  attr_accessor :password_confirmation
+  
+  CARRERA = [
+    # Displayed         stored in db
+    [ "IA - Ingeniero Agronomo" , "IA" ],
+    [ "IAB - Ingeniero en Agrobiotecnologia" , "IAB" ],
+    [ "IIA - Ingeniero en Industrias Alimentarias" , "IIA" ]
+  ]
 
   EmailRegex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
@@ -15,11 +17,10 @@ CARRERA = [
   validates_format_of   :email, :with => EmailRegex
   validates_uniqueness_of :email, :nickname
   validates_inclusion_of :carrera, :in => CARRERA.map {|disp, value| value}
-
-  attr_accessor :password_confirmation
+  validates_length_of :nickname, :in => 4..10
+  validates_length_of :password, :in => 6..15
   validates_confirmation_of :password
-
-  validate :password_non_blank
+  validate :password_non_blank  
 
   def self.authenticate(nickname, password)
     usuario = self.find_by_nickname(nickname)
@@ -43,19 +44,19 @@ CARRERA = [
     create_new_salt
     self.hashed_password = Usuario.encrypted_password(self.password, self.salt)
   end
-  
+
   private
-   def password_non_blank
-     errors.add(:password, "No puede estar en blanco" ) if hashed_password.blank?
-   end
-   
-   def create_new_salt
+  def password_non_blank
+    errors.add(:password, "No puede estar en blanco" ) if hashed_password.blank?
+  end
+
+  def create_new_salt
     self.salt = self.object_id.to_s + rand.to_s
-   end
-   
-   def self.encrypted_password(password, salt)
+  end
+
+  def self.encrypted_password(password, salt)
     string_to_hash = password + "wibble" + salt
     Digest::SHA1.hexdigest(string_to_hash)
-   end
+  end
 
 end
