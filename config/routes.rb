@@ -6,11 +6,12 @@ ActionController::Routing::Routes.draw do |map|
   map.login '/login', :controller => "acceso", :action => "login"
   map.perfil '/perfil', :controller => "usuarios", :action => "perfil"
   map.download '/download/:id', :controller => "assets", :action => "download"
+  
   map.resources :amigos
 
   map.resources :categorias
 
-  map.resources :articulos, :collection => { :busqueda => :get }
+  map.resources :articulos, :path_names => { :new => 'nuevo', :edit => 'editar' }, :collection => { :busqueda => :get }
 
   map.resources :usuarios
 
