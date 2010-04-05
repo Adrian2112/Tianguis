@@ -3,11 +3,13 @@
 <% form_for(@articulo) do |f| %>
   <%= f.error_messages %>
   <div>
+		<%= f.label :nombre, "Nombre" %><br />
     <%= f.text_field :nombre, :placeholder => "Nombre del articulo" %>
   </div>
 	<br/>
   <div>
-    <%= f.text_field :precio, :placeholder => "Precio" %>
+		<%= f.label :precio, "Precio" %><br />
+    <%= f.text_field :precio, :placeholder => "$$$" %>
   </div>
 	<br/>
   <div>
@@ -31,6 +33,7 @@
   </div>
 	<br/>
   <div>
+		<%= f.label :cantidad, "Cantidad" %><br />
     <%= f.text_field :cantidad, :placeholder => "Cuantos tienes?" %>
   </div>
 	<br/>
