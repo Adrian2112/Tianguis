@@ -58,8 +58,8 @@ class UsuariosController < ApplicationController
     @usuario = Usuario.find(session[:user_id])
     @enVenta = Articulo.find_all_by_vendedor_id(session[:user_id])
     @comprados = Articulo.find_all_by_comprador_id_and_status(session[:user_id], 2)
-    @enProcesoCompra = Articulo.find_all_by_comprador_id_and_status(session[:user_id], 1)
     @enProcesoVenta = Articulo.find_all_by_vendedor_id_and_status(session[:user_id], 1)
+    @enProcesoCompra = Articulo.find_all_by_comprador_id_and_status(session[:user_id], 1)
   end
 
   def validateNickname
