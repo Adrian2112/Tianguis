@@ -41,8 +41,14 @@
   </div>
 	<br/>
   <div>
+    <%= f.label :descripcion_corta %><br />
+    <%= f.text_field :descripcion_corta, :size => 70 %><br />
+		<%= error(@articulo, "descripcion_corta") %>
+  </div>
+	<br/>
+  <div>
     <%= f.label :descripcion %><br />
-    <%= f.text_area :descripcion, :cols => 60, :rows => 10 %>
+    <%= f.text_area :descripcion, :cols => 60, :rows => 10 %><br />
 		<%= error(@articulo, "descripcion") %>
   </div>
     <%= f.hidden_field :vendedor_id %>

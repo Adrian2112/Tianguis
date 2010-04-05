@@ -1,56 +1,67 @@
-<h1>Editing articulo</h1>
+<h1>Vendiendo</h1>
 
 <% form_for(@articulo) do |f| %>
-  <%= f.error_messages %>
 
-  <p>
-    <%= f.label :Nombre %><br />
-    <%= f.text_field :Nombre %>
-  </p>
-  <p>
-    <%= f.label :Precio %><br />
-    <%= f.text_field :Precio %>
-  </p>
-  <p>
-    <%= f.label :ImagenUno %><br />
-    <%= f.text_field :ImagenUno %>
-  </p>
-  <p>
-    <%= f.label :ImagenDos %><br />
-    <%= f.text_field :ImagenDos %>
-  </p>
-  <p>
-    <%= f.label :ImagenTres %><br />
-    <%= f.text_field :ImagenTres %>
-  </p>
-  <p>
-    <%= f.label :ImagenCuatro %><br />
-    <%= f.text_field :ImagenCuatro %>
-  </p>
-  <p>
-    <%= f.label :Cantidad %><br />
-    <%= f.text_field :Cantidad %>
-  </p>
-  <p>
-    <%= f.label :Descripcion %><br />
-    <%= f.text_field :Descripcion %>
-  </p>
-  <p>
-    <%= f.label :Status %><br />
-    <%= f.text_field :Status %>
-  </p>
-  <p>
-    <%= f.label :Categoria_id %><br />
-    <%= f.text_field :Categoria_id %>
-  </p>
-  <p>
-    <%= f.label :Usuario_id %><br />
-    <%= f.text_field :Usuario_id %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+  <div>
+		<%= f.label :nombre, "Nombre" %><br />
+    <%= f.text_field :nombre, :placeholder => "Nombre del articulo" %>
+		<%= error(@articulo, "nombre") %>
+  </div>
+	<br/>
+  <div>
+		<%= f.label :precio, "Precio" %><br />
+    <%= f.text_field :precio, :placeholder => "$$$" %>
+		<%= error(@articulo, "precio") %>
+  </div>
+	<br/>
+  <div>
+    <%= f.label :imagen_uno %><br />
+    <%= f.text_field :imagen_uno %>
+  </div>
+	<br/>
+  <div>
+    <%= f.label :imagen_dos %><br />
+    <%= f.text_field :imagen_dos %>
+  </div>
+	<br/>
+  <div>
+    <%= f.label :imagen_tres %><br />
+    <%= f.text_field :imagen_tres %>
+  </div>
+	<br/>
+  <div>
+    <%= f.label :imagen_cuatro %><br />
+    <%= f.text_field :imagen_cuatro %>
+  </div>
+	<br/>
+  <div>
+		<%= f.label :cantidad, "Cantidad" %><br />
+    <%= f.text_field :cantidad, :placeholder => "Cuantos tienes?" %>
+		<%= error(@articulo, "cantidad") %>
+  </div>
+	<br/>
+  <div>
+    <%= f.label :descripcion_corta %><br />
+    <%= f.text_field :descripcion_corta, :size => 70 %><br />
+		<%= error(@articulo, "descripcion_corta") %>
+  </div>
+	<br/>
+  <div>
+    <%= f.label :descripcion %><br />
+    <%= f.text_area :descripcion, :cols => 60, :rows => 10 %><br />
+		<%= error(@articulo, "descripcion") %>
+  </div>
+    <%= f.hidden_field :vendedor_id %>
+	<br/>
+  <div>
+    <%= f.label :categoria_id %><br />
+    <%= f.text_field :categoria_id %>
+		<%= error(@articulo, "categoria") %>
+  </div>
+	<br/>
+  <div>
+    <%= f.submit 'Create' %>
+  </div>
 <% end %>
 
-<%= link_to 'Show', @articulo %> |
 <%= link_to 'Back', articulos_path %>

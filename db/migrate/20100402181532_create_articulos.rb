@@ -8,6 +8,7 @@ class CreateArticulos < ActiveRecord::Migration
       t.string :imagen_tres
       t.string :imagen_cuatro
       t.integer :cantidad
+      t.string :descripcion_corta
       t.string :descripcion
       t.integer :status, :default => 0 
       t.integer :categoria_id

@@ -18,7 +18,7 @@ class ArticulosController < ApplicationController
 
     respond_to do |format|
       if @articulo.save
-        flash[:notice] = 'Tu articulo se publico correctamente.'
+        flash[:notice] = 'Tu articulo se publico exitosamente.'
         format.html { redirect_to perfil_path }
       else
         format.html { render :action => "new" }
@@ -31,7 +31,7 @@ class ArticulosController < ApplicationController
 
     respond_to do |format|
       if @articulo.update_attributes(params[:articulo])
-        flash[:notice] = 'Articulo was successfully updated.'
+        flash[:notice] = 'Tu articulo fue editado exitosamente.'
         format.html { redirect_to(@articulo) }
       else
         format.html { render :action => "edit" }

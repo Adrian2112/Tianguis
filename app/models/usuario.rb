@@ -17,7 +17,7 @@ class Usuario < ActiveRecord::Base
   validates_format_of   :email, :with => EmailRegex
   validates_uniqueness_of :email, :nickname
   validates_inclusion_of :carrera, :in => CARRERA.map {|disp, value| value}
-  validates_length_of :nickname, :in => 4..10
+  validates_length_of :nickname, :in => 4..25
   validates_length_of :password, :in => 6..15
   validates_confirmation_of :password
   validate :password_non_blank  

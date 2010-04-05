@@ -1,7 +1,7 @@
 <div class="Articulos">
 	<div class = "contenido">
 		<%= link_to articulo.nombre, articulo_path(articulo.id)  %><br/>
-		<%= articulo.descripcion %><br/>
+		<%= articulo.descripcion_corta %><br/>
 		<%= number_to_currency(articulo.precio) %><br/>
 	</div>
 	<%= button_to '', {:controller => "usuarios", :action => "comprar", :id => articulo.id}, :class => "btnComprar" %>
