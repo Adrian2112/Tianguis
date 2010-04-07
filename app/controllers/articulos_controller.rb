@@ -3,6 +3,7 @@ class ArticulosController < ApplicationController
   def new
     @usuario = Usuario.find(session[:user_id])
     @articulo = @usuario.articulos.build(:vendedor_id => @usuario.id)
+		3.times {@articulo.assets.build}
   end
 
   def edit
@@ -49,6 +50,10 @@ class ArticulosController < ApplicationController
   end
   
   def busqueda
-    @articulos = Articulo.all
+					if params[:busca]
+								@articulos = Articulo.find(:all, :conditions => ['nombre LIKE ?', "%#{params[:busca]}%"])
+					else 
+								@articulos =Articulo.all
+					end
   end
 end

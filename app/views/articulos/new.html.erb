@@ -1,10 +1,8 @@
 <h1>Vendiendo</h1>
 
-<% end %>
-<% form_for([@articulo,:asset, :url => assets_path, :html => { :multipart => true }] ) do |f| %>
+<% form_for(@articulo) do |f| %>
   <%= f.error_messages %>
-	<%= error_messages_for :asset %>
-	<%= params[:id] %>
+	
   <p>
     <%= f.label :nombre %><br />
     <%= f.text_field :nombre, :placeholder => "Nombre del articulo" %>
@@ -12,24 +10,6 @@
   <p>
     <%= f.label :precio %><br />
     <%= f.text_field :precio, :placeholder => "Precio" %>
-  </p>
-
-<%= render(:partial => '/assets/form', :object => form)%>
-  <p>
-    <%= f.label :imagen_uno %><br />
-    <%= f.text_field :imagen_uno %>
-  </p>
-  <p>
-    <%= f.label :imagen_dos %><br />
-    <%= f.text_field :imagen_dos %>
-  </p>
-  <p>
-    <%= f.label :imagen_tres %><br />
-    <%= f.text_field :imagen_tres %>
-  </p>
-  <p>
-    <%= f.label :imagen_cuatro %><br />
-    <%= f.text_field :imagen_cuatro %>
   </p>
   <p>
     <%= f.label :cantidad %><br />
@@ -49,9 +29,6 @@
   </p>
 <% end %>
 
-<%= error_messages_for :asset %>
-<% form_for(:asset, :url => assets_path, :html => { :multipart => true }) do |form| %>
-<%= render(:partial => '/assets/form', :object => form)%>
-<% end %>
+
 
 <%= link_to 'Back', articulos_path %>

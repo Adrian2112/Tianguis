@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20100403213328) do
   end
 
   create_table "assets", :force => true do |t|
+    t.integer  "articulo_id"
     t.string   "filename"
     t.string   "content_type"
     t.integer  "size"
@@ -78,8 +79,7 @@ ActiveRecord::Schema.define(:version => 20100403213328) do
     t.date     "fecha_nacimiento"
     t.string   "email"
     t.string   "carrera"
-    t.integer  "reputacion",       :limit => 10, :precision => 10, :scale => 0, :default => 0
-    t.integer  "votos",                                                         :default => 0
+    t.integer  "reputacion",       :limit => 10, :precision => 10, :scale => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

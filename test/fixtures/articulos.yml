@@ -1,3 +1,25 @@
+# == Schema Information
+# Schema version: 20100403213328
+#
+# Table name: articulos
+#
+#  id            :integer(4)      not null, primary key
+#  nombre        :string(255)
+#  precio        :integer(10)
+#  imagen_uno    :string(255)
+#  imagen_dos    :string(255)
+#  imagen_tres   :string(255)
+#  imagen_cuatro :string(255)
+#  cantidad      :integer(4)
+#  descripcion   :string(255)
+#  status        :integer(4)
+#  categoria_id  :integer(4)
+#  vendedor_id   :integer(4)
+#  comprador_id  :integer(4)
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
