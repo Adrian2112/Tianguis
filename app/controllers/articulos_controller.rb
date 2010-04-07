@@ -49,6 +49,10 @@ class ArticulosController < ApplicationController
   end
   
   def busqueda
-    @articulos = Articulo.all
+		  if params[:busca]
+					@articulos = Articulo.find(:all, :conditions => ['nombre LIKE ?', "%#{params[:busca]}%"])
+			else
+					@articulos = Articulo.find(:all)
+			end
   end
 end

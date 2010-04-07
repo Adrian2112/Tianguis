@@ -18,7 +18,11 @@
 			<% end %>
 		</div>
 		<div class="menu">
-			<%= button_to "busqueda", busqueda_articulos_path %> <%= link_to "Perfil", perfil_path %> | Comprar | Vender | Mi canasta
+				<% form_tag({:controller => "articulos", :action => "busqueda"}, :method => "get") do%>
+				<%= text_field_tag "busca" %>
+				<%= submit_tag "Buscar", :name => "" %>
+			<% end %>
+<%= link_to "Perfil", perfil_path %> | Comprar | Vender | Mi canasta
 		</div>
 		<div class="pagina">
 			<div class="banderas"></div>
