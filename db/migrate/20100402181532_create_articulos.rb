@@ -10,8 +10,7 @@ class CreateArticulos < ActiveRecord::Migration
       t.integer :cantidad
       t.string :descripcion_corta
       t.string :descripcion
-      t.integer :status, :default => 0 
-      t.integer :categoria_id
+      t.integer :status, :default => 0
       t.integer :vendedor_id
       t.integer :comprador_id
 

@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(:version => 20100402184415) do
     t.string   "descripcion_corta"
     t.string   "descripcion"
     t.integer  "status",                                                         :default => 0
-    t.integer  "categoria_id"
     t.integer  "vendedor_id"
     t.integer  "comprador_id"
     t.datetime "created_at"
@@ -38,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20100402184415) do
 
   create_table "categorias", :force => true do |t|
     t.string   "nombre"
+    t.integer  "articulo_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

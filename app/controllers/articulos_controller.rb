@@ -3,6 +3,7 @@ class ArticulosController < ApplicationController
   def new
     @usuario = Usuario.find(session[:user_id])
     @articulo = @usuario.articulos.build(:vendedor_id => @usuario.id)
+    3.times {@articulo.categorias.build}
   end
 
   def edit
