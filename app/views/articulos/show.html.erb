@@ -1,11 +1,11 @@
-<h2><%= @articulo.nombre %></h2>
+<h2><%= @articulo.nombre.capitalize %></h2>
 <div class="vendedor">
 	<div class="fotoArticulo">
-		Imagen :)
+	<%= image_tag @articulo.imagenUno(:medium) %>
 	</div>
 	<div class="reputacion">
 		<div style="border:black solid 1px; height:133px;">
-			<%= link_to @articulo.vendedor.nombre, usuario_path(@articulo.vendedor_id)%><br/>
+			<%= link_to @articulo.vendedor.nickname, usuario_path(@articulo.vendedor.nickname)%><br/>
 		</div>
 	</div>
 </div>

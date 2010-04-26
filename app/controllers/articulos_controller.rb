@@ -15,7 +15,7 @@ class ArticulosController < ApplicationController
 
   def create
     @articulo = Articulo.new(params[:articulo])
-
+		@articulo = Articulo.create( params[:articulo] )
     respond_to do |format|
       if @articulo.save
         flash[:notice] = 'Tu articulo se publico exitosamente.'
@@ -49,10 +49,6 @@ class ArticulosController < ApplicationController
   end
   
   def busqueda
-		  if params[:busca]
-					@articulos = Articulo.find(:all, :conditions => ['nombre LIKE ?', "%#{params[:busca]}%"])
-			else
-					@articulos = Articulo.find(:all)
-			end
+		@articulos = Articulo.busqueda(params[:busqueda])
   end
 end

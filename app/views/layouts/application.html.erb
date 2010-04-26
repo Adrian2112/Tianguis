@@ -19,7 +19,7 @@
 		</div>
 		<div class="menu">
 				<% form_tag({:controller => "articulos", :action => "busqueda"}, :method => "get") do%>
-				<%= text_field_tag "busca" %>
+				<%= text_field_tag :busqueda %>
 				<%= submit_tag "Buscar", :name => "" %>
 			<% end %>
 <%= link_to "Perfil", perfil_path %> | Comprar | Vender | Mi canasta

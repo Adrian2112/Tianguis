@@ -28,7 +28,7 @@ class UsuariosController < ApplicationController
   end
   
   def show
-    @usuario = Usuario.find(params[:id])
+    @usuario = Usuario.find_by_nickname(params[:id])
     @articulos = Articulo.find_all_by_vendedor_id(params[:id])
   end
 

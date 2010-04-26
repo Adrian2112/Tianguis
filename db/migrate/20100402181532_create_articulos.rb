@@ -3,10 +3,6 @@ class CreateArticulos < ActiveRecord::Migration
     create_table :articulos do |t|
       t.string :nombre
       t.decimal :precio
-      t.string :imagen_uno
-      t.string :imagen_dos
-      t.string :imagen_tres
-      t.string :imagen_cuatro
       t.integer :cantidad
       t.string :descripcion_corta
       t.string :descripcion

@@ -37,7 +37,7 @@ class AmigosController < ApplicationController
     end
   end
 
-  def destroy
+ def destroy
     @amigo = Amigo.find(params[:id])
     @amigo.destroy
 
