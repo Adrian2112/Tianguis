@@ -7,10 +7,24 @@ body{
 .menu{
 	width: 707px;
 	margin: 0 auto 30px;
-	height: 34px;
-	background: url(../images/menu.png);
+	height: 29px;
+	background: url(../images/menu.png) no-repeat;
 	text-align: right;
-	padding: 15px 20px 20px;
+	padding: 20px;
+}
+
+#menu{
+	position:absolute;
+	display:inline;
+	top:300px;
+}
+
+div.opcion{
+	width:102px;
+	height:27px;
+	padding:11px;
+	margin:10px 0;
+	background:url(../images/flecha2.png) no-repeat;
 }
 
 .logo {	
@@ -43,6 +57,7 @@ body{
 	background: url(../images/cuerpo.png);
 	padding: 10px 50px 0;
 	text-overflow:ellipsis;
+	min-height:250px;
 }
 
 .content .descripcionArriba {
@@ -57,7 +72,7 @@ body{
 
 .todo{
 	margin:auto;
-	width:902px;
+	width:906px;
 }
 
 .forma input[type=text], .forma input[type=password]{

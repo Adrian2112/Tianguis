@@ -21,10 +21,6 @@ ActiveRecord::Schema.define(:version => 20100424204510) do
   create_table "articulos", :force => true do |t|
     t.string   "nombre"
     t.integer  "precio",                    :limit => 10, :precision => 10, :scale => 0
-    t.string   "imagen_uno"
-    t.string   "imagen_dos"
-    t.string   "imagen_tres"
-    t.string   "imagen_cuatro"
     t.integer  "cantidad"
     t.string   "descripcion_corta"
     t.string   "descripcion"
