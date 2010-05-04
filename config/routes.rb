@@ -7,8 +7,6 @@ ActionController::Routing::Routes.draw do |map|
   map.perfil '/perfil', :controller => "usuarios", :action => "perfil"
 
   
-  map.resources :amigos
-
   map.resources :categorias
 
   map.resources :articulos, :path_names => { :new => 'nuevo', :edit => 'editar' }, :collection => { :busqueda => :get }
