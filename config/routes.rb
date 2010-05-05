@@ -8,8 +8,6 @@ ActionController::Routing::Routes.draw do |map|
   map.canasta '/canasta', :controller => "usuarios", :action => "canasta"
 
   
-  map.resources :categorias
-
   map.resources :articulos, :path_names => { :new => 'nuevo', :edit => 'editar' }, :collection => { :busqueda => :get }
 
   map.resources :usuarios
