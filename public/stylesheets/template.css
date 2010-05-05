@@ -4,6 +4,15 @@ body{
 	font-size: 16px;
 }
 
+fieldset{
+	border:none;background-color:#EEEEEE; -webkit-border-radius:6px;
+}
+
+legend{
+	border:none;background-color:#EEEEEE;
+	-webkit-border-radius:6px;
+}
+
 .login{
 	-webkit-border-radius:10px;
 	-moz-border-radius: 10px;
