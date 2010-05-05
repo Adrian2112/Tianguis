@@ -4,6 +4,13 @@ body{
 	font-size: 16px;
 }
 
+.login{
+	-webkit-border-radius:10px;
+	-moz-border-radius: 10px;
+	width:400px;
+	margin:auto;
+}
+
 .menu{
 	width: 707px;
 	margin: 0 auto 30px;

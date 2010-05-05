@@ -1,8 +1,12 @@
 <div class="Articulos">
 	<div class = "contenido">
-		<%= link_to articulo.nombre, articulo_path(articulo.id)  %><br/>
-		<%= articulo.descripcion_corta %><br/>
-		<%= number_to_currency(articulo.precio) %><br/>
+		<table>
+			<tr>
+				<td rowspan="3"><%= image_tag articulo.imagenUno(:medium) %></td>
+			</tr>
+			
+		</table>
+		
 	</div>
 	<% if articulo.status == 0 %>
 		<%= button_to '', {:controller => "articulo", :action => "comprar", :id => articulo.id}, :class => "btnComprar" %>

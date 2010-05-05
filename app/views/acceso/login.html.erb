@@ -1,15 +1,18 @@
+<br/>
+<br/>
+<br/>
 <% form_tag do %>
-<fieldset>
-	<div>
-		<%= text_field_tag :nickname, params[:nickname], :placeholder => "Nombre de usuario" %>
+<fieldset class="login">
+	<div style="margin:auto;width:200px;">
+		<%= text_field_tag :nickname, params[:nickname], :placeholder => "Nombre de usuario", :size => 30 %>
 	</div>
-	<div>
-		<%= password_field_tag :password, params[:password], :placeholder => "Password" %>
+	<div style="margin:auto;width:200px;">
+		<%= password_field_tag :password, params[:password], :placeholder => "Password", :size => 30 %>
 	</div>
-	<div>
+	<div style="margin:auto;width:50px;">
 		<%= submit_tag "Login" %>
 	</div>
 </fieldset>
 <% end %>
 
-Nuevo usuario? <%= link_to 'Registrate', signup_path%>
+<div style="margin:auto;width:250px;">Nuevo usuario? <%= link_to 'Registrate', signup_path%></div>
