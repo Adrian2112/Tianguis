@@ -1,12 +1,11 @@
 <fieldset>
 	<legend>Tus datos</legend>
 
-	<%= image_tag @usuario.imagenPerfil(:medium) %>
-	<br/>
+	<%= image_tag @usuario.imagenPerfil(:medium) %><br />
 	<table>
 		<tr>
 			<td>Nombre:</td>
-			<td><%= @usuario.nombre %> <%= @usuario.apellido_paterno %> <%= @usuario.apellido_materno %></td>
+			<td><%= @usuario.nombre.capitalize %> <%= @usuario.apellido_paterno %> <%= @usuario.apellido_materno %></td>
 		</tr>
 		<tr>
 			<td>Nickname:</td>
@@ -38,7 +37,7 @@
 <fieldset>
 	<legend>Tus Artículos en Venta</legend>
 	<% @enVenta.each do |a| %>
-		<%=link_to a.nombre, articulo_path(a.id) %> <%= number_to_currency(a.precio) %><br/>
+		<%=link_to a.nombre, edit_articulo_path(a.id) %> <%= number_to_currency(a.precio) %><br/>
 	<% end %>
 </fieldset>
 

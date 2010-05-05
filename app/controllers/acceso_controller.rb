@@ -9,7 +9,7 @@ class AccesoController < ApplicationController
         session[:user_id] = user.id
         uri = session[:original_uri]
         session[:original_uri] = nil
-        redirect_to(uri || perfil_path)
+        redirect_to(perfil_path)
       else
         flash.now[:notice] = "Usuario y/o contraseña incorrectas"
       end

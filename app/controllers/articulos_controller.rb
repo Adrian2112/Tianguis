@@ -40,7 +40,7 @@ class ArticulosController < ApplicationController
     respond_to do |format|
       if @articulo.update_attributes(params[:articulo])
         flash[:notice] = 'Tu articulo fue editado exitosamente.'
-        format.html { redirect_to(@articulo) }
+        format.html { redirect_to :back }
       else
         format.html { render :action => "edit" }
       end
