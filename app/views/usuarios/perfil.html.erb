@@ -1,5 +1,6 @@
-<fieldset>
-	<legend>Tus datos</legend>
+
+<fieldset style="border:none;background-color:#EEEEEE; -webkit-border-radius:6px;">
+	<legend><h2>Tus datos</h2></legend>
 
 	<%= image_tag @usuario.imagenPerfil(:medium) %><br />
 	<table>
@@ -28,28 +29,27 @@
 			<td><%= image_tag @usuario.reputacion.to_s+'stars.png' %></td>
 		</tr>
 	</table>
-	
-
-</fieldset>
+	<br />
 <%= link_to "Edita tus datos", edit_usuario_path(session[:user_id]) %>
+</fieldset>
+
 <br/>
-<br/>
-<fieldset>
-	<legend>Tus Artículos en Venta</legend>
+<fieldset style="border:none;background-color:#EEEEEE; -webkit-border-radius:6px;">
+	<legend><h3>Tus Artículos en Venta</h3></legend>
 	<% @enVenta.each do |a| %>
 		<%=link_to a.nombre, edit_articulo_path(a.id) %> <%= number_to_currency(a.precio) %><br/>
 	<% end %>
 </fieldset>
-
-<fieldset>
-	<legend>Tus Artículos Comprados</legend>
+<br />
+<fieldset style="border:none;background-color:#EEEEEE; -webkit-border-radius:6px;">
+	<legend><h3>Tus Artículos Comprados</h3></legend>
 	<% @comprados.each do |a| %>
 		<%=link_to a.nombre, articulo_path(a.id) %> <%= number_to_currency(a.precio) %><br/>
 	<% end %>
 </fieldset>
-
-<fieldset>
-	<legend>Tus Artículos en Proceso de venta</legend>
+<br />
+<fieldset style="border:none;background-color:#EEEEEE; -webkit-border-radius:6px;">
+	<legend><h3>Tus Artículos en Proceso de venta</h3></legend>
 	<% @enProcesoVenta.each do |a| %>
 		<%=link_to a.nombre, articulo_path(a.id) %> <%= number_to_currency(a.precio) %><br/>
 	<% end %>
