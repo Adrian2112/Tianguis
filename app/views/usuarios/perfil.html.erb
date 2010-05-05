@@ -1,5 +1,15 @@
 <fieldset>
 	<legend>Tus datos</legend>
+
+	<%= image_tag @usuario.imagenPerfil(:medium) %>
+	Nombre: <%= @usuario.nombre %> <%= @usuario.apellido_paterno %> <%= @usuario.apellido_materno %><br />
+	Nickname: <%= @usuario.nickname %> <br />
+	Sexo: <%= @usuario.sexo %> <br />
+	Telefono: <%= @usuario.telefono %><br/>
+	Email: <%= @usuario.email %><br/>
+	Carrera: <%= @usuario.carrera %><br/>
+	Reputacion: <%= image_tag @usuario.reputacion.to_s+'stars.png' %><br/>
+
 	<table>
 		<tr>
 			<td>Nombre:</td>
@@ -27,6 +37,7 @@
 		</tr>
 	</table>
 	
+
 </fieldset>
 <%= link_to "Edita tus datos", edit_usuario_path(session[:user_id]) %>
 <br/>

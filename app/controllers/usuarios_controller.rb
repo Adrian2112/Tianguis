@@ -4,10 +4,12 @@ class UsuariosController < ApplicationController
 
   def new
     @usuario = Usuario.new    
+    @title = "Registro..."
   end
 
   def edit
     @usuario = Usuario.find(params[:id])
+    @title = @usuario.nickname
     unless @usuario.id == session[:user_id]
       redirect_to perfil_path
     end
@@ -15,7 +17,7 @@ class UsuariosController < ApplicationController
 
   def create
     @usuario = Usuario.new(params[:usuario])
-
+    @usuario = Usuario.create(params[:usuario])
     respond_to do |format|
       if @usuario.save
         flash[:notice] = 'Tu usuario fue creado exitosamente'
@@ -54,6 +56,15 @@ class UsuariosController < ApplicationController
     end
   end
 
+
+  def perfil
+    @usuario = Usuario.find(session[:user_id])
+    @title = @usuario.nickname
+    @enVenta = Articulo.find_all_by_vendedor_id(session[:user_id])
+    @comprados = Articulo.find_all_by_comprador_id_and_status(session[:user_id], 2)
+    @enProcesoVenta = Articulo.find_all_by_vendedor_id_and_status(session[:user_id], 1)
+  end
+
   def validateNickname
     color = 'red'
     username = params[:nickname]
@@ -88,14 +99,7 @@ class UsuariosController < ApplicationController
     @messageEmail = "<span style='color:#{color}; font-size:15px'>#{message}</span>"
     render :partial=>'messageEmail'
   end
-  
-  def perfil
-    @usuario = Usuario.find(session[:user_id])
-    @enVenta = Articulo.find_all_by_vendedor_id(session[:user_id])
-    @comprados = Articulo.find_all_by_comprador_id_and_status(session[:user_id], 2)
-    @enProcesoVenta = Articulo.find_all_by_vendedor_id_and_status(session[:user_id], 1)
-  end
-  
+    
   def canasta
     @enProcesoCompra = Articulo.find_all_by_comprador_id_and_status(session[:user_id], 1)
   end

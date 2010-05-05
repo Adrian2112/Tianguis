@@ -1,10 +1,16 @@
 class ArticulosController < ApplicationController
+
+def index
+@articulos = Articulo.find(:all , :conditions => [ 'nombre LIKE ?', "%#{params[:busqueda]}%"])
+@title = "Busqueda..."
+end
   
   before_filter :autorizar, :except => ["show", "busqueda"]
   
   def new
     @usuario = Usuario.find(session[:user_id])
     @articulo = @usuario.articulos.build(:vendedor_id => @usuario.id)
+    @title = "Vendiendo..."
   end
 
   def edit
@@ -51,7 +57,10 @@ class ArticulosController < ApplicationController
   end
   
   def busqueda
-		@articulos = Articulo.busqueda(params[:busqueda])
+
+		@articulos = Articulo.find(:all , :conditions => [ 'nombre LIKE ?', "%#{params[:busqueda]}%"])
+		@title = "Buscando..."
+
   end
   
   def comprar
@@ -61,5 +70,5 @@ class ArticulosController < ApplicationController
     @articulo.save
     redirect_to perfil_path
   end
-  
+
 end
