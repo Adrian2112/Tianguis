@@ -16,7 +16,7 @@ body{
 	margin: 0 auto 30px;
 	height: 29px;
 	background: url(../images/menu.png) no-repeat;
-	text-align: right;
+	text-align: left;
 	padding: 20px;
 }
 
@@ -40,7 +40,12 @@ div.opcion{
 }
 
 .menu input {
-	float: left;
+	float: right;
+	display:inline;
+}
+
+.menu form{
+	display:inline;
 }
 
 .pagina .banderas {
@@ -93,14 +98,6 @@ div.opcion{
 
 .forma table, th, td{
 	border:9px;
-}
-
-.forma input[type=submit]{
-	background:url(../images/crearCuenta.png);
-	height: 47px;
-	width: 137px;
-	font-size:18px;
-	color:white;
 }
 
 .fotoArticulo {

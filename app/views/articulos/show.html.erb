@@ -6,6 +6,10 @@
 	<div class="reputacion">
 		<div style="border:black solid 1px; height:133px;">
 			<%= link_to @articulo.vendedor.nickname, usuario_path(@articulo.vendedor.nickname)%><br/>
+			Reputaci&oacute;: <%= image_tag @articulo.vendedor.reputacion.to_s+'stars.png' %><br/>
+			Email: <%= @articulo.vendedor.email %><br/>
+			Tiene <%= pluralize(@articulo.cantidad,"articulo") %><br/>
+			El articulo se publico hace <%= distance_of_time_in_words_to_now(@articulo.created_at) %><br/>
 		</div>
 	</div>
 </div>

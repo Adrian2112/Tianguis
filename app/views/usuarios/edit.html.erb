@@ -1,6 +1,6 @@
 <h1>Modifica tu información</h1>
 
-<% form_for  (@usuario, :html => { :multipart => true}) do |f| %>
+<% form_for  (@usuario, :html => { :multipart => true }) do |f| %>
   <%= f.error_messages %>
 
 
@@ -38,7 +38,7 @@
   </p>
   <p>
     <%= f.label :email, "Correo Electronico" %><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email, :disabled => "disabled"%>
   </p>
   <p>
     <%= f.label :carrera, 'Carrera' %><br />

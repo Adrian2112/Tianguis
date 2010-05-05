@@ -2,9 +2,15 @@
 	<div class = "contenido">
 		<table>
 			<tr>
-				<td rowspan="3"><%= image_tag articulo.imagenUno(:medium) %></td>
+				<td rowspan="3"><a href="<%= articulo_path(articulo.id) %>"><%= image_tag articulo.imagenUno(:medium) %></a></td>
+				<td><%= link_to articulo.nombre, articulo_path(articulo.id) %></td>
 			</tr>
-			
+			<tr>
+				<td><%= number_to_currency articulo.precio %></td>
+			</tr>
+			<tr>
+				<td><%= articulo.descripcion_corta %></td>
+			</tr>
 		</table>
 		
 	</div>
