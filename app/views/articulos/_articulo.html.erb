@@ -5,7 +5,7 @@
 		<%= number_to_currency(articulo.precio) %><br/>
 	</div>
 	<% if articulo.status == 0 %>
-		<%= button_to '', {:controller => "usuarios", :action => "comprar", :id => articulo.id}, :class => "btnComprar" %>
+		<%= button_to '', {:controller => "articulo", :action => "comprar", :id => articulo.id}, :class => "btnComprar" %>
 	<% else %>
 		<%= button_to '', {:controller => "usuarios", :action => "comprar",
 			:id => articulo.id}, :class => "btnComprar", :disabled => "disabled"%>

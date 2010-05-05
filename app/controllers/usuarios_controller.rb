@@ -89,14 +89,6 @@ class UsuariosController < ApplicationController
     render :partial=>'messageEmail'
   end
   
-  def comprar
-    @articulo = Articulo.find(params[:id])
-    @articulo.status = 1
-    @articulo.comprador_id = session[:user_id]
-    @articulo.save
-    redirect_to perfil_path
-  end
-  
   def perfil
     @usuario = Usuario.find(session[:user_id])
     @enVenta = Articulo.find_all_by_vendedor_id(session[:user_id])

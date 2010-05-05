@@ -10,15 +10,17 @@
 <body>
 	<div class="todo">
 		<div id="menu">
+			<% unless session[:user_id] == nil %>
 			<div class="opcion">
 				<%= link_to "Perfil", perfil_path %>
 			</div>
 			<div class="opcion">
-				Vender
+				<%= link_to "Vender", new_articulo_path %>
 			</div>
 			<div class="opcion">
 				<%= link_to "Mi canasta", canasta_path %>
 			</div>
+			<% end %>
 		</div>
 		<div class = "logo">
 			<%= image_tag ("logoMenor.png")%>

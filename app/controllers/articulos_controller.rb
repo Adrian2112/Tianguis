@@ -1,5 +1,7 @@
 class ArticulosController < ApplicationController
   
+  before_filter :autorizar, :except => ["show", "busqueda"]
+  
   def new
     @usuario = Usuario.find(session[:user_id])
     @articulo = @usuario.articulos.build(:vendedor_id => @usuario.id)
@@ -51,4 +53,13 @@ class ArticulosController < ApplicationController
   def busqueda
 		@articulos = Articulo.busqueda(params[:busqueda])
   end
+  
+  def comprar
+    @articulo = Articulo.find(params[:id])
+    @articulo.status = 1
+    @articulo.comprador_id = session[:user_id]
+    @articulo.save
+    redirect_to perfil_path
+  end
+  
 end
