@@ -5,6 +5,8 @@ def index
 @title = "Busqueda..."
 end
   
+  before_filter :autorizar, :except => ["show", "busqueda"]
+  
   def new
     @usuario = Usuario.find(session[:user_id])
     @articulo = @usuario.articulos.build(:vendedor_id => @usuario.id)
@@ -55,7 +57,18 @@ end
   end
   
   def busqueda
+
 		@articulos = Articulo.find(:all , :conditions => [ 'nombre LIKE ?', "%#{params[:busqueda]}%"])
 		@title = "Buscando..."
-end
+
+  end
+  
+  def comprar
+    @articulo = Articulo.find(params[:id])
+    @articulo.status = 1
+    @articulo.comprador_id = session[:user_id]
+    @articulo.save
+    redirect_to perfil_path
+  end
+
 end

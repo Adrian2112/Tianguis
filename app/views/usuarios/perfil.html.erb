@@ -1,5 +1,6 @@
 <fieldset>
 	<legend>Tus datos</legend>
+
 	<%= image_tag @usuario.imagenPerfil(:medium) %>
 	Nombre: <%= @usuario.nombre %> <%= @usuario.apellido_paterno %> <%= @usuario.apellido_materno %><br />
 	Nickname: <%= @usuario.nickname %> <br />
@@ -8,8 +9,37 @@
 	Email: <%= @usuario.email %><br/>
 	Carrera: <%= @usuario.carrera %><br/>
 	Reputacion: <%= image_tag @usuario.reputacion.to_s+'stars.png' %><br/>
+
+	<table>
+		<tr>
+			<td>Nombre:</td>
+			<td><%= @usuario.nombre %> <%= @usuario.apellido_paterno %> <%= @usuario.apellido_materno %></td>
+		</tr>
+		<tr>
+			<td>Nickname:</td>
+			<td><%= @usuario.nickname %></td>
+		</tr>
+		<tr>
+			<td>Sexo:</td>
+			<td><%= @usuario.sexo %></td>
+		</tr>
+		<tr>
+			<td>Telefono:</td>
+			<td><%= @usuario.telefono %></td>
+		</tr>
+		<tr>
+			<td>Email:</td>
+			<td><%= @usuario.email %></td>
+		</tr>
+		<tr>
+			<td>Reputacion:</td>
+			<td><%= image_tag @usuario.reputacion.to_s+'stars.png' %></td>
+		</tr>
+	</table>
+	
+
 </fieldset>
-<%= link_to "editar", edit_usuario_path(session[:user_id]) %>
+<%= link_to "Edita tus datos", edit_usuario_path(session[:user_id]) %>
 
 <fieldset>
 	<legend>Tus Artículos en Venta</legend>
@@ -31,12 +61,3 @@
 		<%=link_to a.nombre, articulo_path(a.id) %> <%= number_to_currency(a.precio) %><br/>
 	<% end %>
 </fieldset>
-
-<fieldset>
-	<legend>Tus Artículos en Proceso de compra</legend>
-	<% @enProcesoCompra.each do |a| %>
-		<%=link_to a.nombre, articulo_path(a.id) %> <%= number_to_currency(a.precio) %><br/>
-	<% end %>
-</fieldset>
-
-<%= link_to "Agregar", new_articulo_path %>

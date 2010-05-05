@@ -1,0 +1,6 @@
+<fieldset>
+	<legend>Tus Artículos en Proceso de compra</legend>
+	<% @enProcesoCompra.each do |a| %>
+		<%=link_to a.nombre, articulo_path(a.id) %> <%= number_to_currency(a.precio) %><br/>
+	<% end %>
+</fieldset>

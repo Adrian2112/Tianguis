@@ -9,20 +9,32 @@
 
 <body>
 	<div class="todo">
+		<div id="menu">
+			<% unless session[:user_id] == nil %>
+			<div class="opcion">
+				<%= link_to "Perfil", perfil_path %>
+			</div>
+			<div class="opcion">
+				<%= link_to "Vender", new_articulo_path %>
+			</div>
+			<div class="opcion">
+				<%= link_to "Mi canasta", canasta_path %>
+			</div>
+			<% end %>
+		</div>
 		<div class = "logo">
 			<%= image_tag ("logoMenor.png")%>
-			<% if session[:user_id] == nil %>
-					<%= link_to "Iniciar sesión", login_path %>			
-			<% else %>
-				<%= link_to "Cerrar sesión", :controller => "acceso", :action => "logout" %>
-			<% end %>
 		</div>
 		<div class="menu">
 				<% form_tag({:controller => "articulos", :action => "busqueda"}, :method => "get") do%>
 				<%= text_field_with_auto_complete :articulo, :nombre, {}, { :url => formatted_articulos_path(:js), :method => :get, :with => "'busqueda=' + element.value"} %>
 				<%= submit_tag "Buscar", :name => "" %>
 			<% end %>
-<%= link_to "Perfil", perfil_path %> | Comprar | Vender | Mi canasta
+			<% if session[:user_id] == nil %>
+					<%= link_to "Iniciar sesión", login_path %>			
+			<% else %>
+				<%= link_to "Cerrar sesión", :controller => "acceso", :action => "logout" %>
+			<% end %>
 		</div>
 		<div class="pagina">
 			<div class="banderas"></div>

@@ -5,10 +5,9 @@ ActionController::Routing::Routes.draw do |map|
   map.signup '/signup', :controller => "usuarios", :action => "new"
   map.login '/login', :controller => "acceso", :action => "login"
   map.perfil '/perfil', :controller => "usuarios", :action => "perfil"
+  map.canasta '/canasta', :controller => "usuarios", :action => "canasta"
 
   
-  map.resources :amigos
-
   map.resources :categorias
 
   map.resources :articulos, :path_names => { :new => 'nuevo', :edit => 'editar' }, :collection => { :busqueda => :get }
