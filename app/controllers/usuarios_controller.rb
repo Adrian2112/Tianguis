@@ -1,6 +1,6 @@
 class UsuariosController < ApplicationController
 
-  before_filter :autorizar, :only => "perfil"
+  before_filter :autorizar, :only => ["perfil", "canasta"]
 
   def new
     @usuario = Usuario.new    
@@ -54,14 +54,6 @@ class UsuariosController < ApplicationController
     end
   end
 
-  def perfil
-    @usuario = Usuario.find(session[:user_id])
-    @enVenta = Articulo.find_all_by_vendedor_id(session[:user_id])
-    @comprados = Articulo.find_all_by_comprador_id_and_status(session[:user_id], 2)
-    @enProcesoVenta = Articulo.find_all_by_vendedor_id_and_status(session[:user_id], 1)
-    @enProcesoCompra = Articulo.find_all_by_comprador_id_and_status(session[:user_id], 1)
-  end
-
   def validateNickname
     color = 'red'
     username = params[:nickname]
@@ -103,6 +95,17 @@ class UsuariosController < ApplicationController
     @articulo.comprador_id = session[:user_id]
     @articulo.save
     redirect_to perfil_path
+  end
+  
+  def perfil
+    @usuario = Usuario.find(session[:user_id])
+    @enVenta = Articulo.find_all_by_vendedor_id(session[:user_id])
+    @comprados = Articulo.find_all_by_comprador_id_and_status(session[:user_id], 2)
+    @enProcesoVenta = Articulo.find_all_by_vendedor_id_and_status(session[:user_id], 1)
+  end
+  
+  def canasta
+    @enProcesoCompra = Articulo.find_all_by_comprador_id_and_status(session[:user_id], 1)
   end
 
 end
