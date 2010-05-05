@@ -1,19 +1,13 @@
 <fieldset>
 	<legend>Tus datos</legend>
 
-	<%= image_tag @usuario.imagenPerfil(:medium) %>
-	Nombre: <%= @usuario.nombre %> <%= @usuario.apellido_paterno %> <%= @usuario.apellido_materno %><br />
-	Nickname: <%= @usuario.nickname %> <br />
-	Sexo: <%= @usuario.sexo %> <br />
-	Telefono: <%= @usuario.telefono %><br/>
-	Email: <%= @usuario.email %><br/>
-	Carrera: <%= @usuario.carrera %><br/>
-	Reputacion: <%= image_tag @usuario.reputacion.to_s+'stars.png' %><br/>
+	<%= image_tag @usuario.imagenPerfil(:medium) %><br />
+
 
 	<table>
 		<tr>
 			<td>Nombre:</td>
-			<td><%= @usuario.nombre %> <%= @usuario.apellido_paterno %> <%= @usuario.apellido_materno %></td>
+			<td><%= @usuario.nombre.capitalize %> <%= @usuario.apellido_paterno %> <%= @usuario.apellido_materno %></td>
 		</tr>
 		<tr>
 			<td>Nickname:</td>
@@ -45,7 +39,7 @@
 <fieldset>
 	<legend>Tus Artículos en Venta</legend>
 	<% @enVenta.each do |a| %>
-		<%=link_to a.nombre, articulo_path(a.id) %> <%= number_to_currency(a.precio) %><br/>
+		<%=link_to a.nombre, edit_articulo_path(a.id) %> <%= number_to_currency(a.precio) %><br/>
 	<% end %>
 </fieldset>
 

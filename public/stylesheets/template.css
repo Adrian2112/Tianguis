@@ -26,12 +26,18 @@ body{
 	top:300px;
 }
 
+div.opcion a{
+color: white;
+text-decoration:none;
+}
+
 div.opcion{
 	width:102px;
 	height:27px;
 	padding:11px;
 	margin:10px 0;
 	background:url(../images/flecha2.png) no-repeat;
+	color:white:
 }
 
 .logo {	
@@ -145,6 +151,7 @@ div.opcion{
 	height:27px;
 	position: relative;
 	left: 580px;
+	border:none;
 }
 
 .comprar{
@@ -152,6 +159,7 @@ div.opcion{
 	background:url(../images/botonComprar.png);
 	height:27px;
 	width:79px;
+	
 }
 
 .vendedor{
