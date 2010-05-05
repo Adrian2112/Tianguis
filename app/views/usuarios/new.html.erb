@@ -3,9 +3,10 @@
 <% form_for (@usuario, :html => { :multipart => true}) do |f| %>
 
 <div>
+<%= f.label :imagenPerfil, "Tu imagen"%><br />
 <%= f.file_field :imagenPerfil %>
 </div>
-
+<br />
   <div>
 	  <%= f.label :nombre, "Nombre" %><br />
     <%= f.text_field :nombre, :placeholder => "Nombre de usuario" %>

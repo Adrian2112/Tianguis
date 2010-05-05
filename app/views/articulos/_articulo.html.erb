@@ -2,8 +2,8 @@
 	<div class = "contenido">
 		<table>
 			<tr>
-				<td rowspan="3"><a href="<%= articulo_path(articulo.id) %>"><%= image_tag articulo.imagenUno(:medium) %></a></td>
-				<td><%= link_to articulo.nombre, articulo_path(articulo.id) %></td>
+				<td rowspan="3"><a href="<%= articulo_path(articulo.id) %>"><%= image_tag articulo.imagenUno(:thumb) %></a></td>
+				<td><%= link_to articulo.nombre.capitalize, articulo_path(articulo.id) %></td>
 			</tr>
 			<tr>
 				<td><%= number_to_currency articulo.precio %></td>

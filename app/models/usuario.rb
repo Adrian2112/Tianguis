@@ -25,7 +25,7 @@ class Usuario < ActiveRecord::Base
     ["IQA - Ingeniero Quimico Administrador", "IQA"],
     ["IQS - Ingeniero Quimico y de Sistemas", "IQS"],
     ["ISD - Ingeniero en Sistemas Digitales y Robotica", "ISD"],
-    ["ITC - Ingniero en Tecnologias Computacionales", "ITE"],
+    ["ITC - Ingeniero en Tecnologias Computacionales", "ITE"],
     ["ITE - Ingeniero en Tecnologias Electronicas", "ITE"],
     ["ITIC - Ingeniero en Tecnologias de Informacion y Comunicaciones", "ITIC"],
     ["ITM - Ingeniero en Telecomunicacion y Microelectronica", "ITM"],

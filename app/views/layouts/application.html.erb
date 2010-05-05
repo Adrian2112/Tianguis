@@ -23,7 +23,7 @@
 			<% end %>
 		</div>
 		<div class = "logo">
-			<%= image_tag ("logoMenor.png")%>
+			<a href="<%= perfil_path %>"><%= image_tag ("logoMenor.png")%></a>
 		</div>
 		<div class="menu">
 			<% if session[:user_id] == nil %>
