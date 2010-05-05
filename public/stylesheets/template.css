@@ -6,11 +6,18 @@ body{
 
 fieldset{
 	border:none;background-color:#EEEEEE; -webkit-border-radius:6px;
+	-moz-border-radius:6px;
 }
 
 legend{
 	border:none;background-color:#EEEEEE;
 	-webkit-border-radius:6px;
+	-moz-border-radius:6px;
+}
+
+img{
+	-webkit-border-radius:6px;
+	-moz-border-radius:6px;
 }
 
 .login{
