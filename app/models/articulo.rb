@@ -18,7 +18,6 @@ belongs_to :categoria
 def self.busqueda(busqueda)
 if busqueda
 find(:all, :conditions => ['nombre LIKE ?', "%#{busqueda}%"])
-
 end
 end
 

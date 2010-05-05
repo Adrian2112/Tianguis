@@ -27,8 +27,8 @@
 		</div>
 		<div class="menu">
 				<% form_tag({:controller => "articulos", :action => "busqueda"}, :method => "get") do%>
-					<%= text_field_with_auto_complete :articulo, :nombre, {},
-								{ :url => formatted_articulos_path(:js), :method => :get, :with => "'busqueda='+element.value"} %>
+				<%= text_field_with_auto_complete :articulo, :nombre,
+					{}, { :url => formatted_articulos_path(:js), :method => :get, :with => "'busqueda=' + element.value"} %>
 				<%= submit_tag "Buscar", :name => "" %>
 			<% end %>
 			<% if session[:user_id] == nil %>
