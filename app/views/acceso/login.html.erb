@@ -4,10 +4,12 @@
 <% form_tag do %>
 <fieldset class="login">
 	<div style="margin:auto;width:200px;">
-		<%= text_field_tag :nickname, params[:nickname], :placeholder => "Nombre de usuario", :size => 30 %>
+		<%= label_tag 'usuario', 'Nombre de usuario' %>
+		<%= text_field_tag :nickname, params[:nickname], :id => "usuario", :placeholder => "Nombre de usuario", :size => 30 %>
 	</div>
 	<div style="margin:auto;width:200px;">
-		<%= password_field_tag :password, params[:password], :placeholder => "Password", :size => 30 %>
+		<%= label_tag 'password', 'Contrase&ntilde;a' %>
+		<%= password_field_tag :password, params[:password], :id => "password", :placeholder => "Password", :size => 30 %>
 	</div>
 	<div style="margin:auto;width:50px;">
 		<%= submit_tag "Login" %>

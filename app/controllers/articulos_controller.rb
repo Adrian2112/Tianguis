@@ -3,7 +3,7 @@ class ArticulosController < ApplicationController
   before_filter :autorizar, :except => ["show", "busqueda", "index"]
 
   def index
-    @articulos = Articulo.find(:all , :conditions => [ 'nombre LIKE ?', "%#{params[:busqueda]}%"])
+    @articulos = Articulo.find(:all , :conditions => [ 'nombre LIKE ?', "%#{params[:articulo][:nombre]}%"])
     @title = "Busqueda..."
   end
 
@@ -54,11 +54,6 @@ class ArticulosController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(articulos_url) }
     end
-  end
-
-  def busqueda
-    @articulos = Articulo.find(:all , :conditions => [ 'nombre LIKE ?', "%#{params[:busqueda]}%"])
-    @title = "Buscando..."
   end
 
   def comprar
