@@ -1,6 +1,7 @@
 class Usuario < ActiveRecord::Base
   has_many :articulos
   has_many :amigos
+  has_attached_file :imagenPerfil, :styles => { :medium => "200x200>" }
 
   attr_accessor :password_confirmation
   

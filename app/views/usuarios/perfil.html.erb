@@ -1,5 +1,6 @@
 <fieldset>
 	<legend>Tus datos</legend>
+	<%= image_tag @usuario.imagenPerfil(:medium) %>
 	Nombre: <%= @usuario.nombre %> <%= @usuario.apellido_paterno %> <%= @usuario.apellido_materno %><br />
 	Nickname: <%= @usuario.nickname %> <br />
 	Sexo: <%= @usuario.sexo %> <br />

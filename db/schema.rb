@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100424204510) do
+ActiveRecord::Schema.define(:version => 20100504220623) do
 
   create_table "amigos", :force => true do |t|
     t.integer  "amigo_uno_id", :null => false
@@ -21,10 +21,6 @@ ActiveRecord::Schema.define(:version => 20100424204510) do
   create_table "articulos", :force => true do |t|
     t.string   "nombre"
     t.integer  "precio",                    :limit => 10, :precision => 10, :scale => 0
-    t.string   "imagen_uno"
-    t.string   "imagen_dos"
-    t.string   "imagen_tres"
-    t.string   "imagen_cuatro"
     t.integer  "cantidad"
     t.string   "descripcion_corta"
     t.string   "descripcion"
@@ -70,10 +66,14 @@ ActiveRecord::Schema.define(:version => 20100424204510) do
     t.date     "fecha_nacimiento"
     t.string   "email"
     t.string   "carrera"
-    t.integer  "reputacion",       :limit => 10, :precision => 10, :scale => 0, :default => 0
-    t.integer  "votos",                                                         :default => 0
+    t.integer  "reputacion",                :limit => 10, :precision => 10, :scale => 0, :default => 0
+    t.integer  "votos",                                                                  :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "imagenPerfil_file_name"
+    t.string   "imagenPerfil_content_type"
+    t.integer  "imagenPerfil_file_size"
+    t.datetime "imagenPerfil_updated_at"
   end
 
 end

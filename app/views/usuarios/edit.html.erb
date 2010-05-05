@@ -1,7 +1,10 @@
 <h1>Modifica tu información</h1>
 
-<% form_for(@usuario) do |f| %>
+<% form_for  (@usuario, :html => { :multipart => true}) do |f| %>
   <%= f.error_messages %>
+
+
+<%= f.file_field :imagenPerfil %>
 
 	<p>
     <%= f.label :nickname, "Nickname" %><br />

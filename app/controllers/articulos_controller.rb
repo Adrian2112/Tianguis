@@ -1,8 +1,14 @@
 class ArticulosController < ApplicationController
+
+def index
+@articulos = Articulo.find(:all , :conditions => [ 'nombre LIKE ?', "%#{params[:busqueda]}%"])
+@title = "Busqueda..."
+end
   
   def new
     @usuario = Usuario.find(session[:user_id])
     @articulo = @usuario.articulos.build(:vendedor_id => @usuario.id)
+    @title = "Vendiendo..."
   end
 
   def edit
@@ -49,6 +55,7 @@ class ArticulosController < ApplicationController
   end
   
   def busqueda
-		@articulos = Articulo.busqueda(params[:busqueda])
-  end
+		@articulos = Articulo.find(:all , :conditions => [ 'nombre LIKE ?', "%#{params[:busqueda]}%"])
+		@title = "Buscando..."
+end
 end

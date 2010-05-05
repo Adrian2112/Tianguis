@@ -1,9 +1,11 @@
 <% form_tag do %>
 <fieldset>
 	<div>
+	  Usuario:
 		<%= text_field_tag :nickname, params[:nickname], :placeholder => "Nombre de usuario" %>
 	</div>
 	<div>
+	  Contrasena:
 		<%= password_field_tag :password, params[:password], :placeholder => "Password" %>
 	</div>
 	<div>

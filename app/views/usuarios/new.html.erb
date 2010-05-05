@@ -1,15 +1,19 @@
-<h1>Registrate</h1>
+<h1>Unete a la venta</h1>
 
-<% form_for(@usuario) do |f| %>
+<% form_for (@usuario, :html => { :multipart => true}) do |f| %>
+
+<div>
+<%= f.file_field :imagenPerfil %>
+</div>
 
   <div>
 	  <%= f.label :nombre, "Nombre" %><br />
-    <%= f.text_field :nombre %>
+    <%= f.text_field :nombre, :placeholder => "Nombre de usuario" %>
 		<%= error(@usuario, "nombre") %>
   </div>
 	<br />
 	<div>
-	  <%= f.label :nickname, "Nombre de usuario" %><br />
+	  <%= f.label :nickname, "Apodo" %><br />
     <%= f.text_field :nickname %>
 		<%= error(@usuario, "nickname") %>
   </div>
