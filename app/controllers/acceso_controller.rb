@@ -1,6 +1,8 @@
 class AccesoController < ApplicationController
   def login
-    session[:usuario_id] = nil
+    unless session[:user_id] == nil
+      redirect_to perfil_path
+    end
     if request.post?
       user = Usuario.authenticate(params[:nickname], params[:password])
       if user

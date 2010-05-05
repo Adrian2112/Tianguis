@@ -1,12 +1,12 @@
 class ArticulosController < ApplicationController
+  
+  before_filter :autorizar, :except => ["show", "busqueda", "index"]
 
-def index
-@articulos = Articulo.find(:all , :conditions => [ 'nombre LIKE ?', "%#{params[:busqueda]}%"])
-@title = "Busqueda..."
-end
-  
-  before_filter :autorizar, :except => ["show", "busqueda"]
-  
+  def index
+    @articulos = Articulo.find(:all , :conditions => [ 'nombre LIKE ?', "%#{params[:busqueda]}%"])
+    @title = "Busqueda..."
+  end
+
   def new
     @usuario = Usuario.find(session[:user_id])
     @articulo = @usuario.articulos.build(:vendedor_id => @usuario.id)
@@ -16,14 +16,14 @@ end
   def edit
     @articulo = Articulo.find(params[:id])
   end
-  
+
   def show
     @articulo = Articulo.find(params[:id])
   end
 
   def create
     @articulo = Articulo.new(params[:articulo])
-		@articulo = Articulo.create( params[:articulo] )
+    @articulo = Articulo.create( params[:articulo] )
     respond_to do |format|
       if @articulo.save
         flash[:notice] = 'Tu articulo se publico exitosamente.'
@@ -55,14 +55,12 @@ end
       format.html { redirect_to(articulos_url) }
     end
   end
-  
+
   def busqueda
-
-		@articulos = Articulo.find(:all , :conditions => [ 'nombre LIKE ?', "%#{params[:busqueda]}%"])
-		@title = "Buscando..."
-
+    @articulos = Articulo.find(:all , :conditions => [ 'nombre LIKE ?', "%#{params[:busqueda]}%"])
+    @title = "Buscando..."
   end
-  
+
   def comprar
     @articulo = Articulo.find(params[:id])
     @articulo.status = 1
